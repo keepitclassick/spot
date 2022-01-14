@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS users_favourites CASCADE;
+
+CREATE TABLE users_favourites (
+  users_id SERIAL PRIMARY KEY NOT NULL,
+  shelters_id SERIAL PRIMARY KEY NOT NULL,
+  pets_id SERIAL PRIMARY KEY NOT NULL
+);
