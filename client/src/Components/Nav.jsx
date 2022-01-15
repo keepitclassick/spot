@@ -5,11 +5,11 @@ export default function Nav() {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand id="logo" href="#home">
             <img
               alt=""
-              src="./5223B194-2E82-4705-8DDC-F24D96F4091A.jpeg"
-              width="60"
+              src="./BA7E6C06-C68A-4B54-9CEC-3C39CAFB09CB_4_5005_c.jpeg"
+              width="80"
               height="60"
               className="d-inline-block align-top"
             />{" "}
