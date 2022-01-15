@@ -4,6 +4,7 @@ import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import Banner from "./Components/Banner";
+import Calltoaction from "./Components/Calltoaction";
 import { Carousel, Nav } from "react-bootstrap";
 import Footer from "./Components/Footer";
 import CarouselContainer from "./Components/CarouselContainer";
@@ -13,11 +14,11 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         <Navigation />
-        <Link to="/">Home </Link>
         <Routes>
           <Route path="/" element={<h1>Hello</h1>} />
         </Routes>
         <Banner />
+        <Calltoaction />
       </div>
       <Footer />
     </div>
