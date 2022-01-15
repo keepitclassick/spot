@@ -1,6 +1,8 @@
 import "./Footer.scss";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="main-footer">
       <div className="container">
@@ -9,15 +11,19 @@ export default function Footer() {
           <div className="col">
             <h4>SPOT</h4>
             <ul className="list-unstyled">
-    <li>About Us</li>
-    <li>Resources</li>
+    <li>
+      <a  class="nav-link" href="/About">About Us</a>
+      </li>
+    <li>
+    <a  class="nav-link" href="/About">Resources</a>
+      </li>
     <li></li>
             </ul>
           </div>
           <hr />
-          <div className="row">
+          <div className="row-copyright">
             <p className="col-sm">
-              &copy; {new Date().getFullYear} Desiree Mendes and Kayla Johnston | All rights Reserved
+              &copy; {currentYear} Desiree Mendes and Kayla Johnston | All rights Reserved
             </p>
           </div>
         </div>

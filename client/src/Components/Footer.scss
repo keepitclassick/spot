@@ -1,4 +1,30 @@
 .main-footer {
   color: white;
   background-color: rgb(255, 152, 35);
+  padding-top: 2.5rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Lato';
+  font-weight:600;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+a.nav-link:hover {
+  color: #fec89a;
+}
+
+p.col-sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col h4 {
+  font-size: 30px;
+  font-weight: bolder;
 }
