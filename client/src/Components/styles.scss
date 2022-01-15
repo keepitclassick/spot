@@ -8,6 +8,7 @@ $dark: rgb(255, 152, 35);
 #links {
   font-size: 1.5em;
   font-family: "Luckiest Guy", cursive;
+  justify-content: space-between;
 }
 
 @import "~bootstrap/scss/bootstrap.scss";
