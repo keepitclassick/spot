@@ -4,16 +4,24 @@ import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import Banner from "./Components/Banner";
+import { Carousel, Nav } from "react-bootstrap";
+import Footer from "./Components/Footer";
+import CarouselContainer from "./Components/CarouselContainer";
 
-export default function App() {
+function App() {
   return (
-    <div className="App">
-      <Navigation />
-      <Link to="/">Home </Link>
-      <Routes>
-        <Route path="/" element={<h1>Hello</h1>} />
-      </Routes>
-      <Banner />
+    <div className="page-container">
+      <div className="content-wrap">
+        <Navigation />
+        <Link to="/">Home </Link>
+        <Routes>
+          <Route path="/" element={<h1>Hello</h1>} />
+        </Routes>
+        <Banner />
+      </div>
+      <Footer />
     </div>
   );
 }
+
+export default App;
