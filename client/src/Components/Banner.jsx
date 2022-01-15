@@ -5,15 +5,15 @@ export default function Banner() {
   return (
     <Container>
       <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+        <div class="col-md"></div>
+        <div class="col-md-6">
           <Image
             className="my-auto"
             src={"./images/BB7F034F-9CDA-4678-8758-689526938C11_4_5005_c.jpeg"}
             fluid
           />
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-md"></div>
       </div>
     </Container>
   );
