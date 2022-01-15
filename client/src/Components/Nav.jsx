@@ -1,11 +1,22 @@
-import { Navbar } from 'react-bootstrap'
+import { Navbar, Container } from "react-bootstrap";
 
 export default function Nav() {
   return (
-    <Navbar bg="dark" expand="lg">
-      <Navbar.Brand>
-        Spot
-      </Navbar.Brand>
-</Navbar>
-  )
+    <>
+      <Navbar bsStyle="default" style={{ color: "blue" }}>
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src="./5223B194-2E82-4705-8DDC-F24D96F4091A.jpeg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{" "}
+            Spot
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+    </>
+  );
 }
