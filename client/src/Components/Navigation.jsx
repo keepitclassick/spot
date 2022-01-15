@@ -14,10 +14,25 @@ export default function Navigation() {
           />{" "}
           Spot
         </Navbar.Brand>
-        <Nav>
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/Adopt">Adopt</Nav.Link>
-          <Nav.Link href="/Resources">Resources</Nav.Link>
+        <Nav id="links">
+          <Nav.Item>
+            <Nav.Link href="/home">Home</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="/Adopt">Adopt</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="/Resources">Resources</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="/About">About</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="/Register">Register</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="/Login">Login</Nav.Link>
+          </Nav.Item>
         </Nav>
       </Navbar>
     </>
