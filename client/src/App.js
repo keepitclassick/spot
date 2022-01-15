@@ -1,5 +1,8 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Navigation from "./Components/Navigation";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import { Carousel, Nav } from "react-bootstrap";
 import Footer from "./Components/Footer";
@@ -21,3 +24,4 @@ function App() {
 }
 
 export default App;
+
