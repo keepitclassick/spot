@@ -6,7 +6,7 @@ CREATE TABLE users (
   email VARCHAR(255) UNIQUE NOT NULL,
   phone_number VARCHAR(255),
   password TEXT NOT NULL,
-  favourited_pets VARCHAR(255)
+  favourited_pets VARCHAR(255),
   location VARCHAR(255) 
 );
 
