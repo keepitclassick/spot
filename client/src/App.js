@@ -16,7 +16,7 @@ function App() {
       <div className="content-wrap">
         <Navigation />
         <Routes>
-          <Route path="/" element={<h1>Hello</h1>} />
+          <Route path="/" element={<h1></h1>} />
         </Routes>
         <Banner />
         <Calltoaction />
