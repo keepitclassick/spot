@@ -8,12 +8,11 @@ export default function Navigation() {
           <Navbar.Brand id="logo" href="#home">
             <img
               alt=""
-              src="./BA7E6C06-C68A-4B54-9CEC-3C39CAFB09CB_4_5005_c.jpeg"
-              width="80"
-              height="60"
+              src="./images/0D7BF294-2098-47E2-AE71-CCE624CCE1AC_4_5005_c.jpeg"
+              width="200"
+              height="90"
               className="d-inline-block align-top"
             />{" "}
-            Spot
           </Navbar.Brand>
           <Nav id="links" className="justify-content-end">
             <Nav.Item>
