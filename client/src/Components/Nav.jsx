@@ -3,14 +3,14 @@ import { Navbar, Container } from "react-bootstrap";
 export default function Nav() {
   return (
     <>
-      <Navbar bsStyle="default" style={{ color: "blue" }}>
+      <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">
             <img
               alt=""
               src="./5223B194-2E82-4705-8DDC-F24D96F4091A.jpeg"
-              width="30"
-              height="30"
+              width="60"
+              height="60"
               className="d-inline-block align-top"
             />{" "}
             Spot
