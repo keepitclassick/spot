@@ -5,7 +5,7 @@ export default function Banner() {
   return (
     <Container>
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <a href="/adopt">
             <Image
               className="my-auto"
@@ -16,8 +16,8 @@ export default function Banner() {
             />
           </a>
         </div>
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+        <div class="col-md"></div>
+        <div class="col-md-6">
           <a href="/login">
             <Image
               className="mx-auto"
