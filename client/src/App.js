@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navigation from "./Components/Navigation";
+import Banner from "./Components/Banner";
 import { Carousel, Nav } from "react-bootstrap";
 import Footer from "./Components/Footer";
 import CarouselContainer from "./Components/CarouselContainer";
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<h1>Hello</h1>} />
         </Routes>
+        <Banner />
       </div>
       <Footer />
     </div>
