@@ -16,22 +16,25 @@ export default function Navigation() {
           </Navbar.Brand>
           <Nav id="links" className="justify-content-end">
             <Nav.Item>
-              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="/Adopt">Adopt</Nav.Link>
+              <Nav.Link href="/Adopt">Adopt</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="/Resources">Resources</Nav.Link>
+              <Nav.Link href="/Resources">Resources</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="/About">About</Nav.Link>
+              <Nav.Link href="/About">About</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="/Register">Register</Nav.Link>
+              <Nav.Link href="/email">Contact</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="/Login">Login</Nav.Link>
+              <Nav.Link href="/Register">Register</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/Login">Login</Nav.Link>
             </Nav.Item>
           </Nav>
         </Container>

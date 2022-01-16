@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import {BrowserRouter, Routes, Route, Link, Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Router } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import { Carousel, Nav } from "react-bootstrap";
 import Banner from "./Components/Banner";
@@ -24,9 +24,6 @@ function App() {
 				<Route path="/email" element={<EmailForm />} />
 				<Route path="/register" element={<Registration />} />
         </Routes>
-        <Banner />
-        <Calltoaction />
-        <HomepagePets />
       </div>
       <Footer />
     </div>
