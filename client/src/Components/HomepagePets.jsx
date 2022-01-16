@@ -14,8 +14,8 @@ export default function HomepagePets() {
               <img
                 class="card-img-top"
                 src="./images/petexample1.jpeg"
-                height="250"
-                alt="Card image cap"
+                height="fit-content"
+                alt="black dog"
               />
               <div class="card-body">
                 <h5 class="card-title">Sausage</h5>
@@ -35,8 +35,8 @@ export default function HomepagePets() {
               <img
                 class="card-img-top"
                 src="./images/examplepet2.jpeg"
-                height="250"
-                alt="Card image cap"
+                height="fit-content"
+                alt="black and white cat"
               />
               <div class="card-body">
                 <h5 class="card-title">Lester Sylvester</h5>
@@ -56,8 +56,8 @@ export default function HomepagePets() {
               <img
                 class="card-img-top"
                 src="./images/petexample3.jpeg"
-                height="250"
-                alt="Card image cap"
+                height="fit-content"
+                alt="orange cat"
               />
               <div class="card-body">
                 <h5 class="card-title">Gingerbread</h5>
