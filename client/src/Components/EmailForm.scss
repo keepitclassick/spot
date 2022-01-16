@@ -83,3 +83,14 @@ margin-top: 5px;
   display: block;
 }
 
+@media screen and (min-width: 664px){
+  .container{
+    width: 60%;
+  }
+  }
+  
+  @media screen and (min-width: 986px){
+    .container{
+      width: 40%;
+    }
+    }
