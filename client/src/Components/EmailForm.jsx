@@ -1,5 +1,5 @@
 // import { useState } from "react";
-// import "./EmailForm.scss";
+import "./EmailForm.scss";
 // import axios from "axios";
 
 export default function EmailForm() {

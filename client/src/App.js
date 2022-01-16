@@ -5,9 +5,9 @@ import Navigation from "./Components/Navigation";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import { Carousel, Nav } from "react-bootstrap";
 import Footer from "./Components/Footer";
-import CarouselContainer from "./Components/CarouselContainer";
-import Login from "./Components/Login";
-import EmailForm from "./Components/EmailForm";
+// import CarouselContainer from "./Components/CarouselContainer";
+// import Login from "./Components/Login";
+// import EmailForm from "./Components/EmailForm";
 // import Login  from "./Components/Login";
 
 function App() {
@@ -16,11 +16,10 @@ function App() {
 			<div className="content-wrap">
 			<Navigation />
 			{/* <Login /> */}
-			<EmailForm />
-			<Link to='/'>Home </Link>
+			{/* <EmailForm /> */}
+			{/* <Link to='/'>Home </Link> */}
 			<Routes>
-				<Route path='/' element={<h1>Hello</h1>} />
-				<Route path='/Login' element={Login} />
+				{/* <Route exact path="/login" element={<Login />} /> */}
 			</Routes>
 		</div>
 		<Footer />
