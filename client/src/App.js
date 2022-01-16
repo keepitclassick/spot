@@ -11,6 +11,7 @@ import CarouselContainer from "./Components/CarouselContainer";
 import HomepagePets from "./Components/HomepagePets";
 import Login from "./Components/Login";
 import EmailForm from "./Components/EmailForm";
+import Registration from "./Components/Registration";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
 				{/* <Route exact path='/' element={<HomepagePets />} /> */}
 				<Route path="/login" element={<Login />} />
 				<Route path="/email" element={<EmailForm />} />
+				<Route path="/register" element={<Registration />} />
         </Routes>
         <Banner />
         <Calltoaction />
