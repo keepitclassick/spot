@@ -1,3 +1,5 @@
+import "./EmailForm.scss";
+
 export default function EmailForm() {
   return (
     <div className="container">
@@ -21,7 +23,9 @@ export default function EmailForm() {
     cols="30" rows="5" placeholder="Your message"></textarea>
        </div>
 
+<div className="msg">Message has been sent</div>
        <div className="btn">
+         <button type="submit">Send Email</button>
          
        </div>
       </form>

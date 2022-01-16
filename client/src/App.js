@@ -7,6 +7,7 @@ import { Carousel, Nav } from "react-bootstrap";
 import Footer from "./Components/Footer";
 import CarouselContainer from "./Components/CarouselContainer";
 import Login from "./Components/Login";
+import EmailForm from "./Components/EmailForm";
 // import Login  from "./Components/Login";
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
     <div className='page-container'>
 			<div className="content-wrap">
 			<Navigation />
-			<Login />
+			{/* <Login /> */}
+			<EmailForm />
 			<Link to='/'>Home </Link>
 			<Routes>
 				<Route path='/' element={<h1>Hello</h1>} />
