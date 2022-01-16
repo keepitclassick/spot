@@ -8,6 +8,7 @@ import Calltoaction from "./Components/Calltoaction";
 import { Carousel, Nav } from "react-bootstrap";
 import Footer from "./Components/Footer";
 import CarouselContainer from "./Components/CarouselContainer";
+import HomepagePets from "./Components/HomepagePets";
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
       <div className="content-wrap">
         <Navigation />
         <Routes>
-          <Route path="/" element={<h1>Hello</h1>} />
+          <Route path="/" element={<h1></h1>} />
         </Routes>
         <Banner />
         <Calltoaction />
+        <HomepagePets />
       </div>
       <Footer />
     </div>

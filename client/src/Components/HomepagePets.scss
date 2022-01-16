@@ -1,0 +1,24 @@
+$dark: rgb(255, 152, 35);
+
+.card-text {
+  color: white;
+}
+.card-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 1.3em;
+  color: white;
+}
+
+.card-body {
+  background-color: rgb(255, 152, 35);
+}
+
+.card-footer {
+  color: white;
+}
+btn.btn-dark {
+  color: white;
+}
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
