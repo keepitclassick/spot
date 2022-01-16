@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {BrowserRouter, Routes, Route, Link, Router } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import { Carousel, Nav } from "react-bootstrap";
 import Banner from "./Components/Banner";
@@ -9,6 +9,8 @@ import Calltoaction from "./Components/Calltoaction";
 import Footer from "./Components/Footer";
 import CarouselContainer from "./Components/CarouselContainer";
 import HomepagePets from "./Components/HomepagePets";
+import Login from "./Components/Login";
+import EmailForm from "./Components/EmailForm";
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
       <div className="content-wrap">
         <Navigation />
         <Routes>
-          <Route path="/" element={<h1></h1>} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/email" element={<EmailForm />} />
         </Routes>
         <Banner />
         <Calltoaction />
