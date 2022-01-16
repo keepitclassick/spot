@@ -9,7 +9,7 @@ module.exports = (db) => {
 
   const getUserWithEmail = function (email) {
     return db
-      .query(`SELECT * FROM users WHERE email = $1`, [email.toLowerCase()])
+      .query(`SELECT * FROM users WHERE email = $1`)
       .then((result) => {
         return result.rows[0];
       })

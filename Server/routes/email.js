@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
 const nodemailer = require('nodemailer');
 
 app.get('/', () => {
@@ -33,4 +34,15 @@ let mailOptions = {
   `
 
 }
+smtpTransport.sendMail(mailOptions, (err, res) => {
+if(err) {
+  res.send(err)
+} else {
+  res.send('Success! Message sent!')
+}
 })
+smtpTransport.close();
+
+})
+
+module.exports = router;
