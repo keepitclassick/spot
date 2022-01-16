@@ -15,7 +15,7 @@ export default function Footer() {
       <a  class="nav-link" href="/About">About Us</a>
       </li>
     <li>
-    <a  class="nav-link" href="/About">Resources</a>
+    <a  class="nav-link" href="/Resources">Resources</a>
       </li>
     <li></li>
             </ul>
