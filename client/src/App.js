@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import { Carousel, Nav } from "react-bootstrap";
 import Banner from "./Components/Banner";
