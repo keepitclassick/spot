@@ -1,5 +1,4 @@
 $dark: rgb(255, 152, 35);
-$btn-primary: rgb(255, 152, 35);
 
 .card-text {
   color: white;
@@ -15,6 +14,9 @@ $btn-primary: rgb(255, 152, 35);
 }
 
 .card-footer {
+  color: white;
+}
+btn.btn-dark {
   color: white;
 }
 

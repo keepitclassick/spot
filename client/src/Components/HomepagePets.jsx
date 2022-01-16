@@ -26,7 +26,7 @@ export default function HomepagePets() {
                 </p>
               </div>
               <div class="card-footer text-center">
-                <button type="button" class="btn btn-outline-warning">
+                <button type="button" class="btn btn-dark">
                   See More Details
                 </button>
               </div>
@@ -47,7 +47,7 @@ export default function HomepagePets() {
                 </p>
               </div>
               <div class="card-footer text-center">
-                <button type="button" class="btn btn-outline-warning">
+                <button type="button" class="btn btn-dark">
                   See More Details
                 </button>
               </div>
@@ -67,7 +67,7 @@ export default function HomepagePets() {
                 </p>
               </div>
               <div class="card-footer text-center">
-                <button type="button" class="btn btn-outline-warning">
+                <button type="button" class="btn btn-dark" color="white">
                   See More Details
                 </button>
               </div>
