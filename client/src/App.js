@@ -18,6 +18,7 @@ function App() {
       <div className="content-wrap">
         <Navigation />
         <Routes>
+				{/* <Route exact path='/' element={<HomepagePets />} /> */}
 				<Route path="/login" element={<Login />} />
 				<Route path="/email" element={<EmailForm />} />
         </Routes>
