@@ -25,8 +25,10 @@ export default function HomepagePets() {
                   hyper.
                 </p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted"></small>
+              <div class="card-footer text-center">
+                <button type="button" class="btn btn-outline-warning">
+                  See More Details
+                </button>
               </div>
             </div>
             <div class="card">
@@ -44,8 +46,10 @@ export default function HomepagePets() {
                   personality!
                 </p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted"></small>
+              <div class="card-footer text-center">
+                <button type="button" class="btn btn-outline-warning">
+                  See More Details
+                </button>
               </div>
             </div>
             <div class="card">
@@ -62,8 +66,10 @@ export default function HomepagePets() {
                   chasing his siblings and cuddling with his foster dad.
                 </p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted"></small>
+              <div class="card-footer text-center">
+                <button type="button" class="btn btn-outline-warning">
+                  See More Details
+                </button>
               </div>
             </div>
           </div>
