@@ -29,7 +29,7 @@ const SearchPets = ({
   const [updatePets, setUpdatePets] = useState(pets || []);
   const [petLimit, setPetLimit] = useState(limit || "");
   const [petLocation, setPetLocation] = useState(location || "");
-  const [petDistance, setDistance] = useState(distance || "");
+  const [petDistance, setDistance] = useState("");
   const [sort, setSort] = useState(sortType || "");
 
   const sizes = ["All", "Small", "Medium", "Large"];
@@ -64,7 +64,7 @@ const SearchPets = ({
         size: petSize,
         limit: petLimit,
         location: petLocation,
-        distance: distance,
+        distance: petDistance,
         sort: sort,
       })
       .then((data) => data.data)
@@ -142,7 +142,7 @@ const SearchPets = ({
         >
           <div className="search__form__wrapper-form-box">
             <label>
-              Animal
+              Animal Type
               <select value={petFilter} onChange={onFilterChange}>
                 <option>Select</option>
                 {ANIMALS.map((option) => (
@@ -177,27 +177,14 @@ const SearchPets = ({
             </label>
 
             <label>
-              Limit
-              <select value={petLimit} onChange={onLimitChange}>
-                <option>Select</option>
-                {limits.map((option) => (
-                  <option value={option} key={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label>
               Location
-              <select value={petLocation} onChange={onLocationChange}>
-                <option>Select</option>
-                {locations.map((option) => (
-                  <option value={option} key={option}>
-                    {capitalize(option)}
-                  </option>
-                ))}
-              </select>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Default input"
+                value={petLocation}
+                onChange={onLocationChange}
+              />
             </label>
 
             <label>
@@ -219,6 +206,18 @@ const SearchPets = ({
                 {sortBy.map((option) => (
                   <option value={option} key={option}>
                     {capitalize(option)}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label>
+              Limit
+              <select value={petLimit} onChange={onLimitChange}>
+                <option>Select</option>
+                {limits.map((option) => (
+                  <option value={option} key={option}>
+                    {option}
                   </option>
                 ))}
               </select>
