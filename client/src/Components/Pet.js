@@ -1,7 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Pet = ({ id, name, media, description, breed }) => {
+const Pet = ({
+  id,
+  name,
+  media,
+  description,
+  breed,
+  location,
+  distance,
+  good_with_kids,
+  sort,
+}) => {
   let img = "https://loremflickr.com/300/300 ";
 
   if (media.length !== 0) {
@@ -30,6 +40,8 @@ Pet.defaultProps = {
   id: "",
   age: "",
   location: "",
+  distance: "",
+  sort: "",
 };
 
 export default Pet;

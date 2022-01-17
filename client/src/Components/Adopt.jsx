@@ -18,6 +18,10 @@ const SearchPets = ({
   filterLimit,
   location,
   filterLocation,
+  distance,
+  filterDistance,
+  sortType,
+  filterSort,
 }) => {
   const [petSize, setPetSize] = useState(size);
   const [petFilter, setPetFilter] = useState(filter);
@@ -25,11 +29,30 @@ const SearchPets = ({
   const [updatePets, setUpdatePets] = useState(pets || []);
   const [petLimit, setPetLimit] = useState(limit || "");
   const [petLocation, setPetLocation] = useState(location || "");
+  const [petDistance, setDistance] = useState(distance || "");
+  const [sort, setSort] = useState(sortType || "");
 
   const sizes = ["All", "Small", "Medium", "Large"];
   const genders = ["Unknown", "Male", "Female"];
   const limits = [20, 50, 100];
   const locations = ["Chatham, ON, Canada", "Toronto, ON, Canada"];
+  const distanceList = [
+    "10",
+    "20",
+    "30",
+    "40",
+    "50",
+    "60",
+    "70",
+    "80",
+    "90",
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+  ];
+  const sortBy = ["recent", "distance"];
   const capitalize = ([first, ...rest]) =>
     first.toUpperCase() + rest.join("").toLowerCase(); // eslint-disable-line
 
@@ -41,6 +64,8 @@ const SearchPets = ({
         size: petSize,
         limit: petLimit,
         location: petLocation,
+        distance: distance,
+        sort: sort,
       })
       .then((data) => data.data)
       .catch((error) => error);
@@ -51,6 +76,8 @@ const SearchPets = ({
     filterGender(petGender);
     filterLimit(limit);
     filterLocation(location);
+    filterDistance(distance);
+    filterSort(sortType);
   }
 
   const onFilterChange = (e) => {
@@ -74,8 +101,18 @@ const SearchPets = ({
   };
 
   const onLocationChange = (e) => {
-    const { value } = e.target.value;
+    const { value } = e.target;
     setPetLocation(value);
+  };
+
+  const onDistanceChange = (e) => {
+    const { value } = e.target;
+    setDistance(value);
+  };
+
+  const onSortChange = (e) => {
+    const { value } = e.target;
+    setSort(value);
   };
 
   useEffect(async () => {
@@ -156,6 +193,30 @@ const SearchPets = ({
               <select value={petLocation} onChange={onLocationChange}>
                 <option>Select</option>
                 {locations.map((option) => (
+                  <option value={option} key={option}>
+                    {capitalize(option)}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label>
+              Distance(miles)
+              <select value={distance} onChange={onDistanceChange}>
+                <option>Select</option>
+                {distanceList.map((option) => (
+                  <option value={option} key={option}>
+                    {capitalize(option)}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label>
+              Sort By
+              <select value={sort} onChange={onSortChange}>
+                <option>Select</option>
+                {sortBy.map((option) => (
                   <option value={option} key={option}>
                     {capitalize(option)}
                   </option>
