@@ -24,7 +24,9 @@ const Pet = ({
         <img src={img} alt="" />
         <span>{name}</span>
         <span>
-          <button type="submit">Submit</button>
+          <a href="#" class="btn btn-dark">
+            Meet {name}
+          </a>
         </span>
       </div>
     </div>
