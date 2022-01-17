@@ -1,9 +1,11 @@
 const express = require("express")
 const router = express.Router();
-require("dotenv").config();
-
 
 module.exports = ({getUserByEmail}) => {
+
+  router.get('/', (req, res) => {
+    res.send
+  })
   
   router.post('/', (req, res) => {
     const {email: userEmail} = req.body;

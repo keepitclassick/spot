@@ -22,10 +22,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.scss";
 import axios from 'axios';
-export default function Login(props) {
+export default function Login() {
   
 
-  const { currentUser, setCurrentUser } = props;
+  const [user, setCurrentUser] = useState("null")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
 	const login = e => {
 		e.preventDefault();
 
@@ -41,16 +45,22 @@ export default function Login(props) {
 			.post('/api/login', data)
 			.then(res => {
 				setCurrentUser(res.data);
-				console.log(res.data);
+				const user = JSON.stringify(res.data);
+        localStorage.setItem("userID", user);
+        window.location.href = "/adopt";
 			})
 			.catch(err => {
 				console.log(err);
+        window.alert("Incorrect email or password")
 			});
-	};
 
+	};
   const handleSubmit = function () {};
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+
+ 
+  
+  
 
   return (
     <div class="bg-img">
