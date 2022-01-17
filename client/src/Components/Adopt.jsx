@@ -202,7 +202,7 @@ const SearchPets = ({
 
             <label>
               Distance(miles)
-              <select value={distance} onChange={onDistanceChange}>
+              <select value={petDistance} onChange={onDistanceChange}>
                 <option>Select</option>
                 {distanceList.map((option) => (
                   <option value={option} key={option}>

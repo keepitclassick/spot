@@ -63,7 +63,7 @@ textarea {
   background-color: #fff;
   color: #121212;
   padding: 10px;
-  box-shadow: 1.95px 1.95px 2.6px rgb(101 4 181 / 15%);
+  box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
   margin-left: 15px;
   font-size: 20px;
   font-family: "Alegreya", serif;
@@ -195,5 +195,25 @@ textarea {
   .search__form__wrapper-form-box > label {
     width: 100%;
     margin-bottom: 15px;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .search__form__wrapper-form,
+  .search__form__wrapper-form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .search__form__wrapper-form {
+    padding: 10px;
+    box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
+  }
+
+  .search__form__wrapper-form-box > label {
+    width: 100%;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
   }
 }

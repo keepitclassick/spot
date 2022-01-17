@@ -23,6 +23,9 @@ const Pet = ({
       <div className="pets__card-box">
         <img src={img} alt="" />
         <span>{name}</span>
+        <span>
+          <button type="submit">Submit</button>
+        </span>
       </div>
     </div>
   );
