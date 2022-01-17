@@ -2,15 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Pet = ({ id, name, media, description, breed }) => {
-  let pic = "https://via.placeholder.com/300";
+  let img = "https://loremflickr.com/300/300 ";
 
   if (media.length !== 0) {
-    pic = media[0].medium;
+    img = media[0].medium;
   }
+
   return (
     <div className="pets__card" data-tesid="pets-comp">
       <div className="pets__card-box">
-        <img src={pic} alt="" />
+        <img src={img} alt="" />
         <span>{name}</span>
       </div>
     </div>
