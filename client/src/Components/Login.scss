@@ -1,0 +1,55 @@
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
+.btn button {
+  width: 150px;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  margin-top: 5px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn button:hover {
+    background-color: rgb(255, 152, 35);
+    cursor: pointer;
+  }
+
+  .bg-img {
+  /* The image used */
+  background-image: url("https://t3.ftcdn.net/jpg/00/62/44/62/240_F_62446241_9sky8UC2irTtj4kHcqeIuSrkXH5t9EY8.jpg");
+    
+
+  /* Control the height of the image */
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  position: relative;
+}
+
+.input#password{
+  box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
+}
+
+input#email {
+  box-shadow: 1px 1px 4px 1px rgb(255 152 35);
+}

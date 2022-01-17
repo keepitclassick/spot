@@ -20,27 +20,43 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-// import "./Login.css";
+import "./Login.scss";
 import axios from 'axios';
-export default function Login() {
+export default function Login(props) {
   
-  const login = () => {
-    axios.post("/api/login").then((res) => setEmail(res.data))
-  }
+
+  const { currentUser, setCurrentUser } = props;
+	const login = e => {
+		e.preventDefault();
+
+    
+		const data = {
+			email: document.getElementById('email').value,
+			password: document.getElementById('password').value,
+		};
+
+		console.log(data);
+
+		axios
+			.post('/api/login', data)
+			.then(res => {
+				setCurrentUser(res.data);
+				console.log(res.data);
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
+
+  const handleSubmit = function () {};
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
-
   return (
-    <div className="Login">
-      <Form onSubmit={handleSubmit}>
+    <div class="bg-img">
+<div className="Login">
+ 
+      <Form action="/action_page.php" class="container" onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -58,11 +74,16 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        {/* <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
-        </Button> */}
-        <button onClick={login}>Login</button>
+        <div className="btn">
+         <button type="submit" onClick={login}>Login</button>
+    </div>
       </Form>
     </div>
+    </div>
+
+
+    
+  
+    
   );
 }

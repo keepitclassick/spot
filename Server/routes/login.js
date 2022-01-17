@@ -1,42 +1,28 @@
 const express = require("express")
 const router = express.Router();
+require("dotenv").config();
 
 
-module.exports = (db) => {
-  router.get("/", function (req, res) {
-    res.send("testing route");
+module.exports = ({getUserByEmail}) => {
+  
+  router.post('/', (req, res) => {
+    const {email: userEmail} = req.body;
+    const {password: userPassword} = req.body;
+
+    getUserByEmail(userEmail)
+      .then(user => {
+        if (user.password === userPassword) {
+          res.json(user);
+        } else {
+          res.json(false);
+        }
+      })
+      .catch(err =>
+        res.json({
+          error: err.message,
+        })
+      );
   });
 
-  const getUserWithEmail = function (email) {
-    return db
-      .query(`SELECT * FROM users WHERE email = $1`)
-      .then((result) => {
-        return result.rows[0];
-      })
-      .catch((err) => {
-        return null;
-      });
-  };
-  exports.getUserWithEmail = getUserWithEmail;
-
-  const login = function (userEmail, userPassword) {
-    return getUserWithEmail(userEmail).then((user) => {
-      if (!user) {
-       return null 
-       }
-      if (userPassword, user.password) {
-        return user;
-      }; 
-    });
-  };
-  exports.login = login;
-
- router.post("/", function (req, res) {
-   const { email, password } = req.body;
-   login(email, password).then((user) => {
-     console.log("------", email)
-   })
- })
- 
   return router;
 };
