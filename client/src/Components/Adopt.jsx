@@ -16,16 +16,20 @@ const SearchPets = ({
   filterGender,
   limit,
   filterLimit,
+  location,
+  filterLocation,
 }) => {
-  const [petSize, petSizeSet] = useState(size);
-  const [petFilter, petFilterSet] = useState(filter);
-  const [petGender, petGenderSet] = useState(gender || "All");
+  const [petSize, setPetSize] = useState(size);
+  const [petFilter, setPetFilter] = useState(filter);
+  const [petGender, setPetGender] = useState(gender || "All");
   const [updatePets, setUpdatePets] = useState(pets || []);
   const [petLimit, setPetLimit] = useState(limit || "");
+  const [petLocation, setPetLocation] = useState(location || "");
 
   const sizes = ["All", "Small", "Medium", "Large"];
   const genders = ["Unknown", "Male", "Female"];
   const limits = [20, 50, 100];
+  const locations = ["Chatham, ON, Canada", "Toronto, ON, Canada"];
   const capitalize = ([first, ...rest]) =>
     first.toUpperCase() + rest.join("").toLowerCase(); // eslint-disable-line
 
@@ -36,6 +40,7 @@ const SearchPets = ({
         gender: petGender,
         size: petSize,
         limit: petLimit,
+        location: petLocation,
       })
       .then((data) => data.data)
       .catch((error) => error);
@@ -45,27 +50,34 @@ const SearchPets = ({
     filterSize(petSize);
     filterGender(petGender);
     filterLimit(limit);
+    filterLocation(location);
   }
 
   const onFilterChange = (e) => {
     const { value } = e.target;
-    petFilterSet(value);
+    setPetFilter(value);
   };
 
   const onSizeChange = (e) => {
     const { value } = e.target;
-    petSizeSet(value);
+    setPetSize(value);
   };
 
   const onGenderChange = (e) => {
     const { value } = e.target;
-    petGenderSet(value);
+    setPetGender(value);
   };
 
   const onLimitChange = (e) => {
     const { value } = e.target;
     setPetLimit(value);
   };
+
+  const onLocationChange = (e) => {
+    const { value } = e.target.value;
+    setPetLocation(value);
+  };
+
   useEffect(async () => {
     const { animals } = await petFinder.animal
       .search({
@@ -73,6 +85,7 @@ const SearchPets = ({
         gender: "",
         size: "",
         limit: "",
+        location: "",
       })
       .then((res) => res.data);
 
@@ -91,7 +104,7 @@ const SearchPets = ({
           }}
         >
           <div className="search__form__wrapper-form-box">
-            <label htmlFor="id-1">
+            <label>
               Animal
               <select value={petFilter} onChange={onFilterChange}>
                 <option>Select</option>
@@ -102,7 +115,7 @@ const SearchPets = ({
                 ))}
               </select>
             </label>
-            <label htmlFor="id-2">
+            <label>
               Size
               <select value={petSize} onChange={onSizeChange}>
                 <option>Select</option>
@@ -114,7 +127,7 @@ const SearchPets = ({
               </select>
             </label>
 
-            <label htmlFor="id-3">
+            <label>
               Gender
               <select value={petGender} onChange={onGenderChange}>
                 <option>Select</option>
@@ -133,6 +146,18 @@ const SearchPets = ({
                 {limits.map((option) => (
                   <option value={option} key={option}>
                     {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label>
+              Location
+              <select value={petLocation} onChange={onLocationChange}>
+                <option>Select</option>
+                {locations.map((option) => (
+                  <option value={option} key={option}>
+                    {capitalize(option)}
                   </option>
                 ))}
               </select>

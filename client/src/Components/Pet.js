@@ -7,7 +7,6 @@ const Pet = ({ id, name, media, description, breed }) => {
   if (media.length !== 0) {
     pic = media[0].medium;
   }
-
   return (
     <div className="pets__card" data-tesid="pets-comp">
       <div className="pets__card-box">
@@ -29,6 +28,7 @@ Pet.defaultProps = {
   media: [],
   id: "",
   age: "",
+  location: "",
 };
 
 export default Pet;
