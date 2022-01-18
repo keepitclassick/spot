@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route, Link, Router } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import { Carousel, Nav } from "react-bootstrap";
 import Footer from "./Components/Footer";
-import CarouselContainer from "./Components/CarouselContainer";
 import HomepagePets from "./Components/HomepagePets";
 import Login from "./Components/Login";
 import EmailForm from "./Components/EmailForm";
@@ -29,6 +28,7 @@ function App() {
 				<Route path="/register" element={<Registration />} />
 				<Route path="/about" element={<AboutUs />} />
 				<Route path="/resources" element={<Resources />} />
+				
 
         </Routes>
       </div>

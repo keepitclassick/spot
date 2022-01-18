@@ -41,9 +41,22 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
+  const getShelterByEmail = (email) => {
+    const query = {
+      text: `SELECT * FROM shelters WHERE email = $1`,
+      values: [email],
+    };
+
+    return db
+      .query(query)
+      .then((result) => result.rows[0])
+      .catch((err) => err);
+  };
+
   return {
     getUsers,
     getUserByEmail,
     addUser,
+    getShelterByEmail
   };
 };

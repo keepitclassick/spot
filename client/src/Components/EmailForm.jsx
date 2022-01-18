@@ -1,25 +1,43 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./EmailForm.scss";
-// import axios from "axios";
+import axios from "axios";
 
 export default function EmailForm() {
 
-  // const [name, setName] = useState("")
-  // const [email, setEmail] = useState("")
-  // const [message, setMessage] = useState("")
-  // const [sent, setSent] = useState .. sent:false?
-  //props + setState => handleName, handleEmail, handleMessagr
-  //add value and onChange for name, email, message
+  const [values, setValues] = useState({
+    name: "",
+    userEmail: "",
+    message: "",
+    status: false
+  })
 
-  //formSubmit =>event preventDefault => send data(name, email, message)
-  //axios post request to backend (useEffect) => set sent to true and reset form
+  const handleStateChange = (e) => {
+    setValues((prevValues) => ({
+      ...prevValues,
+      [e.target.name]: e.target.value,
+    }));
+  }
 
-// const resetForm = () => {
-  //setState
-//   name: '',
-//   email: '',
-//   message: ''
-// }
+ const submitEmail = async (e) => {
+   e.preventDefault();
+   axios
+   .post('/api/email', values)
+   .then(() => {
+     setValues({
+       name: "",
+       email: "",
+       message: "",
+       status: true
+     })
+     .catch(err => {
+       console.log(err);
+       window.alert("Email not sent")
+     });
+  
+    });
+
+ };
+   
   return (
     <div className="container">
       <form>
@@ -28,25 +46,30 @@ export default function EmailForm() {
          <label htmlFor="name">Name</label>
          <input type="text" name="name"
          className="name" placeholder="Your name"
-
+         value={values.name} onChange={handleStateChange}
          />
+
        </div>
        {/* end of single item */}
        <div className="single-item">
          <label htmlFor="email">Email</label>
          <input type="text" name="email"
-         className="name" placeholder="Your email" />
+         className="name" placeholder="Your email" 
+         value={values.email} onChange={handleStateChange}
+         />
        </div>
 
        <div className="text-area single-item">
          <label htmlFor="message">Message</label>
     <textarea name="message" id=""
-    cols="30" rows="5" placeholder="What would you like to say?"></textarea>
+    cols="30" rows="5" placeholder="What would you like to say?">
+      value={values.message} onChange={handleStateChange}
+    </textarea>
        </div>
 
 <div className="msg">Message has been sent</div>
        <div className="btn">
-         <button type="submit">Send Email</button>
+         <button onSubmit={submitEmail} type="submit">Send Email</button>
          
        </div>
       </form>
