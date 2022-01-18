@@ -27,6 +27,21 @@ $dark: rgb(255, 152, 35);
   background-color: rgb(255, 152, 35);
   cursor: pointer;
 }
-.input {
-  box-shadow: 1px 1px 4px 1px #ff9823;
+h1 {
+  font-family: "Luckiest Guy", cursive;
 }
+
+#background {
+  background-image: url("https://i.ibb.co/6WGWWwY/19-AA2424-1-D53-42-E1-BD84-C1-E689-F2-F190-1-201-a.jpg");
+  /* Control the height of the image */
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  position: relative;
+}
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
