@@ -85,10 +85,10 @@ export default function Registration() {
             }}
           />
         </Form.Group>
-
         <Button variant="dark" type="submit" onClick={register}>
           Submit
         </Button>
+        Already have an account? <a href="/login">Log in</a> here!
       </Form>
     </div>
   );
