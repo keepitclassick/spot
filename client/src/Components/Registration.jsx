@@ -1,17 +1,28 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import "./Registration.scss";
+import Axios from "axios";
 
 export default function Registration() {
-  const [name, setName] = useState("");
+  const [usersName, setName] = useState("");
   const [email, setEmail] = useState("");
   const [location, setLocation] = useState("");
   const [cell, setCell] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    console.log("handled");
+  const register = () => {
+    Axios.post("http://localhost:3001/api/users", {
+      name: usersName,
+      email: email,
+      phone_number: cell,
+      password: password,
+      favourited_pets: "",
+      location: location,
+    }).then((res) => {
+      console.log(res);
+    });
   };
+
   return (
     <Form id="register">
       <Form.Group className="mb-3">
@@ -68,7 +79,7 @@ export default function Registration() {
         />
       </Form.Group>
 
-      <Button variant="dark" type="submit" onSubmit={handleSubmit}>
+      <Button variant="dark" type="submit" onClick={register}>
         Submit
       </Button>
     </Form>
