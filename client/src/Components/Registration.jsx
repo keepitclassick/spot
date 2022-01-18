@@ -25,9 +25,11 @@ export default function Registration() {
 
   return (
     <Form id="register">
+      <h1>Register Now!</h1>
       <Form.Group className="mb-3">
         <Form.Label>Name</Form.Label>
         <Form.Control
+          id="email"
           type="text"
           placeholder="Enter your name"
           onChange={(e) => {
@@ -38,6 +40,7 @@ export default function Registration() {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
+          id="email"
           type="email"
           placeholder="Enter email"
           onChange={(e) => {
@@ -51,6 +54,7 @@ export default function Registration() {
       <Form.Group className="mb-3">
         <Form.Label>Location</Form.Label>
         <Form.Control
+          id="email"
           type="text"
           placeholder="Enter location"
           onChange={(e) => {
@@ -61,6 +65,7 @@ export default function Registration() {
       <Form.Group className="mb-3">
         <Form.Label>Cell Phone</Form.Label>
         <Form.Control
+          id="email"
           type="text"
           placeholder="Enter phone number"
           onChange={(e) => {
@@ -71,6 +76,7 @@ export default function Registration() {
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
+          id="email"
           type="password"
           placeholder="Password"
           onChange={(e) => {
