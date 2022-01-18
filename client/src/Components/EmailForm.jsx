@@ -14,15 +14,17 @@ export default function EmailForm() {
   const handleStateChange = (e) => {
     setValues((prevValues) => ({
       ...prevValues,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }));
   }
 
- const submitEmail = async (e) => {
+ const submitEmail = (e) => {
+   console.log("handling submit event")
    e.preventDefault();
    axios
    .post('/api/email', values)
-   .then(() => {
+   .then((res) => {
+     console.log("Server responded")
      setValues({
        name: "",
        email: "",
@@ -40,7 +42,7 @@ export default function EmailForm() {
    
   return (
     <div className="container">
-      <form>
+      <form METHOD="POST" onSubmit={submitEmail}>
       {/* single item */}
        <div className="single-item">
          <label htmlFor="name">Name</label>
@@ -69,7 +71,7 @@ export default function EmailForm() {
 
 <div className="msg">Message has been sent</div>
        <div className="btn">
-         <button onSubmit={submitEmail} type="submit">Send Email</button>
+         <button type="submit">Send Email</button>
          
        </div>
       </form>
