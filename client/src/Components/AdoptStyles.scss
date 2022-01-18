@@ -135,7 +135,8 @@ textarea {
   color: rgb(255, 152, 35);
   font-size: 29px;
   font-weight: 600;
-  font-family: "Alegreya", serif;
+  font-size: 1.5em;
+  font-family: "Luckiest Guy", cursive;
 }
 
 .pets__details-wrapper {
@@ -161,7 +162,8 @@ textarea {
   margin-bottom: 20px;
   font-size: 25px;
   transition: all 0.3s linear;
-  font-family: "Alegreya", serif;
+  font-size: 1.5em;
+  font-family: "Luckiest Guy", cursive;
   color: #fff;
 }
 
@@ -217,3 +219,5 @@ textarea {
     box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
   }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");

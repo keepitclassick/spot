@@ -33,9 +33,8 @@ const SearchPets = ({
   const [sort, setSort] = useState(sortType || "");
 
   const sizes = ["All", "Small", "Medium", "Large"];
-  const genders = ["Unknown", "Male", "Female"];
+  const genders = ["Male", "Female"];
   const limits = [20, 50, 100];
-  const locations = ["Chatham, ON, Canada", "Toronto, ON, Canada"];
   const distanceList = [
     "10",
     "20",
@@ -142,6 +141,17 @@ const SearchPets = ({
         >
           <div className="search__form__wrapper-form-box">
             <label>
+              Location
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Default input"
+                value={petLocation}
+                onChange={onLocationChange}
+              />
+            </label>
+
+            <label>
               Animal Type
               <select value={petFilter} onChange={onFilterChange}>
                 <option>Select</option>
@@ -174,17 +184,6 @@ const SearchPets = ({
                   </option>
                 ))}
               </select>
-            </label>
-
-            <label>
-              Location
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Default input"
-                value={petLocation}
-                onChange={onLocationChange}
-              />
             </label>
 
             <label>

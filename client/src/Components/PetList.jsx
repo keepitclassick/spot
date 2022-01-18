@@ -14,6 +14,7 @@ const PetsList = ({ pets }) => (
           media={pet.photos}
           description={pet.description}
           location={pet.location}
+          url={pet.url}
         />
       ))
     )}
