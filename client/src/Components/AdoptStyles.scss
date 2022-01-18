@@ -28,12 +28,10 @@ textarea {
 .search__form__wrapper {
   background-color: #fff;
   padding: 15px;
-  box-shadow: 1.95px 1.95px 2.6px rgb(255, 152, 35, 15%);
   border-radius: 10px;
   max-width: 1200px;
   font-family: "Alegreya", serif;
   margin-bottom: 15px;
-  flex-flow: column wrap;
 }
 
 .search__form__wrapper-form {
@@ -45,18 +43,18 @@ textarea {
 
 .search__form__wrapper-form-box > label {
   background-color: #fff;
-  color: #121212;
+  color: rgb(255, 152, 35);
   padding: 10px;
-  box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
+  text-shadow: 2px 2px black;
   margin-left: 15px;
-  font-size: 20px;
-  font-family: "Alegreya", serif;
+  font-size: 1.5em;
+  font-family: "Luckiest Guy", cursive;
 }
 
 .search__form__wrapper-form-box > label > select {
   margin-left: 10px;
   color: rgb(255, 152, 35);
-  font-family: "Alegreya", serif;
+  font-family: "Barlow Condensed", sans-serif;
 }
 
 .search__form__wrapper-form > button {
@@ -66,6 +64,11 @@ textarea {
   font-size: 25px;
   transition: all 0.3s linear;
   font-family: "Alegreya", serif;
+  box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
+  color: rgb(255, 152, 35);
+  text-shadow: 2px 2px black;
+  font-size: 1.5em;
+  font-family: "Luckiest Guy", cursive;
 }
 
 .pets__wrapper {
@@ -123,48 +126,6 @@ textarea {
   font-family: "Luckiest Guy", cursive;
 }
 
-.pets__details-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgb(255, 152, 35);
-}
-
-.pets__details-wrapper-box {
-  color: #fff;
-}
-
-.pets__details-wrapper-image > img {
-  width: 800px;
-}
-
-.pets__details-wrapper-box > button {
-  border: 1px solid #b56204;
-  padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 25px;
-  transition: all 0.3s linear;
-  font-size: 1.5em;
-  font-family: "Luckiest Guy", cursive;
-  color: #fff;
-}
-
-.search__form__wrapper-form > button:hover {
-  background-color: rgb(255, 152, 35);
-  color: #fff;
-}
-
-.pets__details-wrapper-box > button:last-child {
-  margin-left: 20px;
-}
-
-.pets__details-wrapper-box > button:hover {
-  background-color: rgb(255, 152, 35);
-  color: #fff;
-}
-
 @media screen and (max-width: 820px) {
   .search__form__wrapper-form,
   .search__form__wrapper-form-box {
@@ -182,6 +143,7 @@ textarea {
   .search__form__wrapper-form-box > label {
     width: 100%;
     margin-bottom: 15px;
+    box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
   }
 }
 
@@ -194,7 +156,6 @@ textarea {
   }
   .search__form__wrapper-form {
     padding: 10px;
-    box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
   }
 
   .search__form__wrapper-form-box > label {
@@ -203,5 +164,4 @@ textarea {
     box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
   }
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Luckiest+Guy&family=Prompt:wght@300&display=swap");

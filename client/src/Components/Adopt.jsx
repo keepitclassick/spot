@@ -163,7 +163,7 @@ const SearchPets = ({
 
   return (
     <div className="main__wrapper" data-testid="search-pets-id">
-      <div className="search__form__wrapper">
+      <div id="search-form" className="search__form__wrapper">
         <form
           data-testid="search-pets-form"
           className="search__form__wrapper-form"
@@ -185,7 +185,7 @@ const SearchPets = ({
             </label>
 
             <label>
-              Animal Type
+              Animal
               <select value={petFilter} onChange={onFilterChange}>
                 <option>Select</option>
                 {ANIMALS.map((option) => (
@@ -256,7 +256,7 @@ const SearchPets = ({
             </label>
 
             <label>
-              Good With Kids
+              Kids
               <select value={goodWithKids} onChange={onGoodWithKidsChange}>
                 <option>Select</option>
                 {isGoodWithKids.map((option) => (
@@ -267,7 +267,7 @@ const SearchPets = ({
               </select>
             </label>
             <label>
-              Good With Dogs
+              Dogs
               <select value={goodWithDogs} onChange={onGoodWithDogsChange}>
                 <option>Select</option>
                 {isGoodWithDogs.map((option) => (
@@ -278,7 +278,7 @@ const SearchPets = ({
               </select>
             </label>
             <label>
-              Good With Cats
+              Cats
               <select value={goodWithCats} onChange={onGoodWithCatsChange}>
                 <option>Select</option>
                 {isGoodWithCats.map((option) => (
