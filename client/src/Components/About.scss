@@ -4,4 +4,24 @@
   display: flex;
   align-content: center;
   justify-content: center;
+  margin-top: 30px;
+}
+
+.col {
+  font-family: 'Luckiest Guy';
+  font-size: 2em;
+}
+
+p.card-text {
+  color: black;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+img.card-img {
+  height: 500px;
+  width: 500px;
 }
