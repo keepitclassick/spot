@@ -10,7 +10,9 @@ const Pet = ({
   breed,
   location,
   distance,
-  good_with_kids,
+  good_with_children,
+  good_with_dogs,
+  good_with_cats,
   sort,
   url,
 }) => {
@@ -46,6 +48,9 @@ Pet.defaultProps = {
   distance: "",
   sort: "",
   url: "",
+  good_with_children: "",
+  good_with_dogs: "",
+  good_with_cats: "",
 };
 
 export default Pet;

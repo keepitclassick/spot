@@ -22,6 +22,12 @@ const SearchPets = ({
   filterDistance,
   sortType,
   filterSort,
+  goodWithChildren,
+  filterGoodWithChildren,
+  goodWithDog,
+  filterGoodWithDog,
+  goodWithCat,
+  filterGoodWithCat,
 }) => {
   const [petSize, setPetSize] = useState(size);
   const [petFilter, setPetFilter] = useState(filter);
@@ -31,8 +37,11 @@ const SearchPets = ({
   const [petLocation, setPetLocation] = useState(location || "");
   const [petDistance, setDistance] = useState("");
   const [sort, setSort] = useState(sortType || "");
+  const [goodWithKids, setGoodWithKids] = useState("");
+  const [goodWithDogs, setGoodWithDogs] = useState("");
+  const [goodWithCats, setGoodWithCats] = useState("");
 
-  const sizes = ["All", "Small", "Medium", "Large"];
+  const sizes = ["Small", "Medium", "Large"];
   const genders = ["Male", "Female"];
   const limits = [20, 50, 100];
   const distanceList = [
@@ -52,6 +61,9 @@ const SearchPets = ({
     "500",
   ];
   const sortBy = ["recent", "distance"];
+  const isGoodWithKids = ["true", "false"];
+  const isGoodWithDogs = ["true", "false"];
+  const isGoodWithCats = ["true", "false"];
   const capitalize = ([first, ...rest]) =>
     first.toUpperCase() + rest.join("").toLowerCase(); // eslint-disable-line
 
@@ -65,6 +77,9 @@ const SearchPets = ({
         location: petLocation,
         distance: petDistance,
         sort: sort,
+        good_with_children: goodWithKids,
+        good_with_cats: goodWithDogs,
+        good_with_dogs: goodWithCats,
       })
       .then((data) => data.data)
       .catch((error) => error);
@@ -77,6 +92,9 @@ const SearchPets = ({
     filterLocation(location);
     filterDistance(distance);
     filterSort(sortType);
+    filterGoodWithChildren(goodWithChildren);
+    filterGoodWithDog(goodWithDog);
+    filterGoodWithCat(goodWithCat);
   }
 
   const onFilterChange = (e) => {
@@ -114,6 +132,21 @@ const SearchPets = ({
     setSort(value);
   };
 
+  const onGoodWithKidsChange = (e) => {
+    const { value } = e.target;
+    setGoodWithKids(value);
+  };
+
+  const onGoodWithDogsChange = (e) => {
+    const { value } = e.target;
+    setGoodWithDogs(value);
+  };
+
+  const onGoodWithCatsChange = (e) => {
+    const { value } = e.target;
+    setGoodWithCats(value);
+  };
+
   useEffect(async () => {
     const { animals } = await petFinder.animal
       .search({
@@ -130,7 +163,7 @@ const SearchPets = ({
 
   return (
     <div className="main__wrapper" data-testid="search-pets-id">
-      <div className="search__form__wrapper">
+      <div id="search-form" className="search__form__wrapper">
         <form
           data-testid="search-pets-form"
           className="search__form__wrapper-form"
@@ -143,16 +176,16 @@ const SearchPets = ({
             <label>
               Location
               <input
-                class="form-control"
+                class="form-control  form-control-sm"
                 type="text"
-                placeholder="Default input"
+                placeholder="City, Province"
                 value={petLocation}
                 onChange={onLocationChange}
               />
             </label>
 
             <label>
-              Animal Type
+              Animal
               <select value={petFilter} onChange={onFilterChange}>
                 <option>Select</option>
                 {ANIMALS.map((option) => (
@@ -221,7 +254,42 @@ const SearchPets = ({
                 ))}
               </select>
             </label>
+
+            <label>
+              Kids
+              <select value={goodWithKids} onChange={onGoodWithKidsChange}>
+                <option>Select</option>
+                {isGoodWithKids.map((option) => (
+                  <option value={option} key={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Dogs
+              <select value={goodWithDogs} onChange={onGoodWithDogsChange}>
+                <option>Select</option>
+                {isGoodWithDogs.map((option) => (
+                  <option value={option} key={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Cats
+              <select value={goodWithCats} onChange={onGoodWithCatsChange}>
+                <option>Select</option>
+                {isGoodWithCats.map((option) => (
+                  <option value={option} key={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
+
           <button type="submit">Find Pet</button>
         </form>
       </div>
