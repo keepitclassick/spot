@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import "./Registration.scss";
 
 export default function Registration() {
   return (
-    <Form>
+    <Form id="register">
       <Form.Group className="mb-3">
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="Enter you name" />
@@ -31,7 +32,7 @@ export default function Registration() {
         <Form.Label>Confirm Password</Form.Label>
         <Form.Control type="password" placeholder="Confirm Password" />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="dark" type="submit">
         Submit
       </Button>
     </Form>

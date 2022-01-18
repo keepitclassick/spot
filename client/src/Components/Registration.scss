@@ -1,44 +1,29 @@
-.label {
-  display: block;
-  font-size: larger;
-  color: rgb(19, 19, 19);
-  padding: 5px;
+$dark: rgb(255, 152, 35);
+
+#register {
+  padding: 60px 0;
+  margin: 0 auto;
+  max-width: 320px;
 }
 
-.input {
-  font-size: larger;
-  padding: 5px;
-  margin: 2px;
+.btn button {
+  width: 150px;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  margin-top: 5px;
 }
+
 .btn {
-  color: white;
-  background-color: red;
-  border-radius: 5px;
-  font-size: larger;
-  display: block;
-  padding: 5px;
-  margin: 10px auto;
+  width: 100%;
+  text-align: center;
 }
 
-.messages {
-  display: flex;
-  justify-content: center;
-}
-
-.error {
-  display: block;
-  background-color: red;
-  color: rgb(243, 0, 0);
-  width: fit-content;
-  height: 50px;
-  padding: 5px;
-}
-
-.success {
-  display: block;
-  background-color: lightblue;
-  color: rgb(21, 196, 64);
-  width: fit-content;
-  height: 50px;
-  padding: 5px;
+.btn button:hover {
+  background-color: rgb(255, 152, 35);
+  cursor: pointer;
 }
