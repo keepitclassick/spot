@@ -1,0 +1,29 @@
+$dark: rgb(255, 152, 35);
+
+#register {
+  padding: 60px 0;
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.btn button {
+  width: 150px;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  margin-top: 5px;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+}
+
+.btn button:hover {
+  background-color: rgb(255, 152, 35);
+  cursor: pointer;
+}

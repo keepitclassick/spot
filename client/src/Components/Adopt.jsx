@@ -178,7 +178,7 @@ const SearchPets = ({
               <input
                 class="form-control  form-control-sm"
                 type="text"
-                placeholder="City, Province"
+                placeholder="Postal Code"
                 value={petLocation}
                 onChange={onLocationChange}
               />
