@@ -62,8 +62,8 @@ export default function EmailForm() {
        <div className="text-area single-item">
          <label htmlFor="message">Message</label>
     <textarea name="message" id=""
-    cols="30" rows="5" placeholder="What would you like to say?">
-      value={values.message} onChange={handleStateChange}
+    cols="30" rows="5" placeholder="What would you like to say?"
+    value={values.message} onChange={handleStateChange}>
     </textarea>
        </div>
 
