@@ -1,18 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./AdoptStyles.scss";
 
-const Pet = ({ id, name, media, description, breed }) => {
-  let img = "https://loremflickr.com/300/300 ";
-
-  if (media.length !== 0) {
-    img = media[0].medium;
-  }
+const Pet = ({
+  id,
+  name,
+  media,
+  description,
+  breed,
+  location,
+  distance,
+  good_with_kids,
+  sort,
+  url,
+}) => {
+  let img = media[0].medium;
 
   return (
     <div className="pets__card" data-tesid="pets-comp">
       <div className="pets__card-box">
         <img src={img} alt="" />
-        <span>{name}</span>
+        <span id="name">{name}</span>
+        <span>
+          <a href={url} class="btn btn-dark">
+            Meet {name}
+          </a>
+        </span>
       </div>
     </div>
   );
@@ -30,6 +43,9 @@ Pet.defaultProps = {
   id: "",
   age: "",
   location: "",
+  distance: "",
+  sort: "",
+  url: "",
 };
 
 export default Pet;
