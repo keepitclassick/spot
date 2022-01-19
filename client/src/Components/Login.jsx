@@ -19,28 +19,53 @@
 
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-// import "./Login.css";
+import "./Login.scss";
 import axios from 'axios';
 export default function Login() {
   
-  const login = () => {
-    axios.post("/api/login").then((res) => setEmail(res.data))
-  }
+
+  const [user, setCurrentUser] = useState("null")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+	const login = e => {
+		e.preventDefault();
+
+    
+		const data = {
+			email: document.getElementById('email').value,
+			password: document.getElementById('password').value,
+		};
+
+		console.log(data);
+
+		axios
+			.post('/api/login', data)
+			.then(res => {
+				setCurrentUser(res.data);
+				const user = JSON.stringify(res.data);
+        localStorage.setItem("userID", user);
+        window.location.href = "/adopt";
+			})
+			.catch(err => {
+				console.log(err);
+        window.alert("Incorrect email or password")
+			});
+
+	};
+  const handleSubmit = function () {};
+
+
+ 
+  
+  
 
   return (
-    <div className="Login">
-      <Form onSubmit={handleSubmit}>
+    <div class="bg-img">
+<div className="Login">
+ 
+      <Form action="/action_page.php" class="container" onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -58,11 +83,16 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        {/* <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
-        </Button> */}
-        <button onClick={login}>Login</button>
+        <div className="btn">
+         <button type="submit" onClick={login}>Login</button>
+    </div>
       </Form>
     </div>
+    </div>
+
+
+    
+  
+    
   );
 }
