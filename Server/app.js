@@ -34,6 +34,6 @@ app.use("/api/login", loginRouter(dbHelpers));
 //app.use("/api/register", registerRouter(dbHelpers));
 // app.use("api/favourites/:id", favouritesRouter(dbHelpers));
 // app.use("/api/delete/:id", deleteRouter(dbHelpers));
-app.use("/api/email", emailRouter);
+app.use("/api/email", emailRouter());
 
 module.exports = app;
