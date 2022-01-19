@@ -7,7 +7,6 @@ const Pet = ({
   id,
   name,
   media,
-  description,
   breed,
   location,
   distance,
@@ -16,8 +15,16 @@ const Pet = ({
   good_with_cats,
   sort,
   url,
+  tags,
+  type,
 }) => {
   let img = media[0].medium;
+  let description =
+    tags.length > 2
+      ? `Hi! I'm ${name} the ${type}. Besides being adorable, I'm also 
+${tags[0]}, ${tags[1]} and ${tags[2]}.`
+      : `Hi! I'm ${name} the ${type}. Besides being adorable, I'm also 
+affectionate, adventurous and loyal.`;
 
   return (
     <div className="pets__card" data-tesid="pets-comp">
@@ -25,21 +32,10 @@ const Pet = ({
         <img src={img} alt="" />
         <span id="name">{name}</span>
         <span>
-          <a href={url} class="btn btn-dark">
-            Meet {name}
-          </a>
           <Accordion>
             <Accordion.Item eventKey="0">
-              <Accordion.Header>Accordion Item #1</Accordion.Header>
-              <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Accordion.Body>
+              <Accordion.Header>More about {name}</Accordion.Header>
+              <Accordion.Body>{description}</Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </span>
@@ -59,6 +55,7 @@ Pet.defaultProps = {
   media: [],
   id: "",
   age: "",
+  description: "",
   location: "",
   distance: "",
   sort: "",
@@ -66,6 +63,7 @@ Pet.defaultProps = {
   good_with_children: "",
   good_with_dogs: "",
   good_with_cats: "",
+  type: "",
 };
 
 export default Pet;

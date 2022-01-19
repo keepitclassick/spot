@@ -14,22 +14,19 @@ import Registration from "./Components/Registration";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 
-
 function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
         <Navigation />
         <Routes>
-
           {<Route exact path="/" element={<HomepagePets />} />}
           <Route path="/login" element={<Login />} />
           <Route path="/email" element={<EmailForm />} />
           <Route path="/adopt" element={<Adopt />} />
-				<Route path="/register" element={<Registration />} />
-				<Route path="/about" element={<AboutUs />} />
-				<Route path="/resources" element={<Resources />} />
-
+          <Route path="/register" element={<Registration />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/resources" element={<Resources />} />
         </Routes>
       </div>
       <Footer />

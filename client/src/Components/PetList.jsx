@@ -15,6 +15,11 @@ const PetsList = ({ pets }) => (
           description={pet.description}
           location={pet.location}
           url={pet.url}
+          type={pet.type}
+          species={pet.species}
+          size={pet.size}
+          environment={pet.environment}
+          tags={pet.tags}
         />
       ))
     )}

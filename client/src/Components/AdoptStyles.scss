@@ -87,7 +87,7 @@ textarea {
   width: 300px;
   display: flex;
   flex-direction: column;
-  box-shadow: 1.95px 1.95px 2.6px rgb(0 0 0 / 15%);
+  box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
   border-radius: 6px;
 }
 
@@ -98,7 +98,7 @@ textarea {
 }
 
 .pets__card-box > span {
-  font-size: 22px;
+  font-size: 15px;
   text-align: center;
   bottom: 0;
   background-color: #fff;
