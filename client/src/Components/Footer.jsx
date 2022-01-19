@@ -11,24 +11,28 @@ export default function Footer() {
           <div className="col">
             <h4>SPOT</h4>
             <ul className="list-unstyled">
-    <li>
-      <a  class="nav-link" href="/About">About Us</a>
-      </li>
-    <li>
-    <a  class="nav-link" href="/Resources">Resources</a>
-      </li>
-    <li></li>
+              <li>
+                <a class="nav-link" href="/About">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a class="nav-link" href="/Resources">
+                  Resources
+                </a>
+              </li>
+              <li></li>
             </ul>
           </div>
           <hr />
           <div className="row-copyright">
             <p className="col-sm">
-              &copy; {currentYear} Desiree Mendes and Kayla Johnston | All rights Reserved
+              &copy; {currentYear} Desiree Mendes and Kayla Johnston | All
+              rights Reserved
             </p>
           </div>
         </div>
-       
       </div>
     </div>
-  )
+  );
 }

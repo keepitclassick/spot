@@ -7,15 +7,13 @@ import Banner from "./Banner";
 
 export default function HomepagePets() {
   return (
-    <>
-      <div>
-        <Banner />
-      </div>
-      <Calltoaction />
-
+    <div id="home-background">
+      <div class="slogan">See spot. Love spot. Adopt spot.</div>
       <div class="row">
         <div class="col-md"></div>
+
         <div class="col-md"></div>
+
         <div id="examplepets" class="col-md-6">
           <div class="card-group">
             <div class="card">
@@ -33,11 +31,7 @@ export default function HomepagePets() {
                   hyper.
                 </p>
               </div>
-              <div class="card-footer text-center">
-                <button type="button" class="btn btn-dark">
-                  See More Details
-                </button>
-              </div>
+              <div class="card-footer text-center"></div>
             </div>
             <div class="card">
               <img
@@ -54,11 +48,7 @@ export default function HomepagePets() {
                   personality!
                 </p>
               </div>
-              <div class="card-footer text-center">
-                <button type="button" class="btn btn-dark">
-                  See More Details
-                </button>
-              </div>
+              <div class="card-footer text-center"></div>
             </div>
             <div class="card">
               <img
@@ -74,17 +64,13 @@ export default function HomepagePets() {
                   chasing his siblings and cuddling with his foster dad.
                 </p>
               </div>
-              <div class="card-footer text-center">
-                <button type="button" class="btn btn-dark" color="white">
-                  See More Details
-                </button>
-              </div>
+              <div class="card-footer text-center"></div>
             </div>
           </div>
 
           <div class="col-md"></div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

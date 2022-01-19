@@ -29,17 +29,17 @@ const SearchPets = ({
   goodWithCat,
   filterGoodWithCat,
 }) => {
-  const [petSize, setPetSize] = useState(size);
+  const [petSize, setPetSize] = useState(size || null);
   const [petFilter, setPetFilter] = useState(filter);
   const [petGender, setPetGender] = useState(gender || "All");
   const [updatePets, setUpdatePets] = useState(pets || []);
-  const [petLimit, setPetLimit] = useState(limit || "");
+  const [petLimit, setPetLimit] = useState(limit || "20");
   const [petLocation, setPetLocation] = useState(location || "");
-  const [petDistance, setDistance] = useState("");
-  const [sort, setSort] = useState(sortType || "");
-  const [goodWithKids, setGoodWithKids] = useState("");
-  const [goodWithDogs, setGoodWithDogs] = useState("");
-  const [goodWithCats, setGoodWithCats] = useState("");
+  const [petDistance, setDistance] = useState("100");
+  const [sort, setSort] = useState(sortType || "distance");
+  const [goodWithKids, setGoodWithKids] = useState("true");
+  const [goodWithDogs, setGoodWithDogs] = useState("true");
+  const [goodWithCats, setGoodWithCats] = useState("true");
 
   const sizes = ["Small", "Medium", "Large"];
   const genders = ["Male", "Female"];
