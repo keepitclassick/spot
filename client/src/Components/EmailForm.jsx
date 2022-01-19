@@ -6,7 +6,7 @@ export default function EmailForm() {
 
   const [values, setValues] = useState({
     name: "",
-    userEmail: "",
+    email: "",
     message: "",
     status: false
   })
