@@ -20,6 +20,7 @@ const PetsList = ({ pets }) => (
           size={pet.size}
           environment={pet.environment}
           tags={pet.tags}
+          gender={pet.gender}
         />
       ))
     )}

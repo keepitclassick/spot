@@ -17,13 +17,14 @@ const Pet = ({
   url,
   tags,
   type,
+  gender,
 }) => {
   let img = media[0].medium;
   let description =
     tags.length > 2
-      ? `Hi! I'm ${name} the ${type}. Besides being adorable, I'm also 
+      ? `Hi! I'm ${name} the ${gender} ${type}. Besides being adorable, I'm also 
 ${tags[0]}, ${tags[1]} and ${tags[2]}.`
-      : `Hi! I'm ${name} the ${type}. Besides being adorable, I'm also 
+      : `Hi! I'm ${name} the ${gender} ${type}. Besides being adorable, I'm also 
 affectionate, adventurous and loyal.`;
 
   return (
@@ -64,6 +65,7 @@ Pet.defaultProps = {
   good_with_dogs: "",
   good_with_cats: "",
   type: "",
+  gender: "",
 };
 
 export default Pet;
