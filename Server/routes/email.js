@@ -30,7 +30,8 @@ module.exports = () => {
     <h3>Message</h3>
     <p>${req.body.values.message}</p>
     `
-  }
+  };
+  
   transporter.sendMail(mailOptions, (err, response) => {
   if(err) {
     res.send(err)
@@ -40,7 +41,7 @@ module.exports = () => {
     console.log("Message sent")
   }
   })
-  transporter.close();
+  // transporter.close();
   
   
   })

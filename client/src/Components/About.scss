@@ -1,27 +1,54 @@
-.inner h1 {
-  font-size: 3em;
-  font-family: "Luckiest Guy", cursive;
-  display: flex;
-  align-content: center;
+// *{
+//   margin: 0;
+//   padding: 0;
+//   font-family:'Courier New', Courier, monospace;
+//   box-sizing: border-box;
+// }
+
+body{
+  min-height: 100vh;
+  align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  background-color: #f1f1f1;
+}
+
+.about{
+  background: url("https://images.unsplash.com/photo-1559190394-df5a28aab5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGRvZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60") no-repeat left;
+  background-size: 55%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner{
+  width: 55%;
+  float: right;
+  background-color: #fdfdfd;
+  padding: 150px;
+}
+
+.inner h1{
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: "Luckiest Guy", cursive;
+}
+
+.text{
+  font-size: 13px;
+  color: black;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.questions {
+        width: 100%;
+        position: relative;
+        text-align: center;
 }
 
 .col {
-  font-family: 'Luckiest Guy';
-  font-size: 2em;
-}
-
-p.card-text {
-  color: black;
-}
-
-.card-title {
-  margin-bottom: 0.5rem;
-  color: black;
-}
-
-img.card-img {
-  height: 500px;
-  width: 500px;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 30px;
 }
