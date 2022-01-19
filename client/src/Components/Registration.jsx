@@ -24,64 +24,72 @@ export default function Registration() {
   };
 
   return (
-    <Form id="register">
-      <Form.Group className="mb-3">
-        <Form.Label>Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter your name"
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="Enter email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Location</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter location"
-          onChange={(e) => {
-            setLocation(e.target.value);
-          }}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Cell Phone</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter phone number"
-          onChange={(e) => {
-            setCell(e.target.value);
-          }}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-      </Form.Group>
-
-      <Button variant="dark" type="submit" onClick={register}>
-        Submit
-      </Button>
-    </Form>
+    <div id="background">
+      <Form id="register">
+        <h1>Register Now!</h1>
+        <Form.Group className="mb-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            id="email"
+            type="text"
+            placeholder="Enter your name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            id="email"
+            type="email"
+            placeholder="Enter email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Location</Form.Label>
+          <Form.Control
+            id="email"
+            type="text"
+            placeholder="Enter location"
+            onChange={(e) => {
+              setLocation(e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Cell Phone</Form.Label>
+          <Form.Control
+            id="email"
+            type="text"
+            placeholder="Enter phone number"
+            onChange={(e) => {
+              setCell(e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            id="email"
+            type="password"
+            placeholder="Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Button variant="dark" type="submit" onClick={register}>
+          Submit
+        </Button>
+        Already have an account? <a href="/login">Log in</a> here!
+      </Form>
+    </div>
   );
 }
