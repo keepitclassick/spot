@@ -26,7 +26,6 @@ textarea {
 }
 
 .search__form__wrapper {
-  background-color: #fff;
   padding: 15px;
   border-radius: 10px;
   max-width: 1200px;
@@ -126,6 +125,10 @@ textarea {
   font-family: "Luckiest Guy", cursive;
 }
 
+#adopt-header {
+  width: 50%;
+  height: 250px;
+}
 @media screen and (max-width: 820px) {
   .search__form__wrapper-form,
   .search__form__wrapper-form-box {

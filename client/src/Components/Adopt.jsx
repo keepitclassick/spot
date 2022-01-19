@@ -163,6 +163,10 @@ const SearchPets = ({
 
   return (
     <div className="main__wrapper" data-testid="search-pets-id">
+      <img
+        id="adopt-header"
+        src="https://i.ibb.co/cLf3RnK/e-Bay-Store-Billboard-1280x290-px.jpg"
+      />
       <div id="search-form" className="search__form__wrapper">
         <form
           data-testid="search-pets-form"
