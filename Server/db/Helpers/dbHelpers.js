@@ -53,10 +53,23 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
+  const addUserFavourite = (favourited_pets, user_id) => {
+    const query = {
+      text: `INSERT INTO users (favourited_pets) VALUES ($1) RETURNING *`,
+      values: [favourited_pets, user_id],
+    };
+
+    return db
+      .query(query)
+      .then((result) => result.rows[0])
+      .catch((err) => err);
+  };
+
   return {
     getUsers,
     getUserByEmail,
     addUser,
-    getShelterByEmail
+    getShelterByEmail,
+    addUserFavourite,
   };
 };
