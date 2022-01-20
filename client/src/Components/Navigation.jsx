@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 export default function Navigation() {
   //useEffect check localstorage for userID
   //conditionally render login/register
@@ -45,11 +45,13 @@ export default function Navigation() {
           ) : (
             <Nav.Item>
             <Nav.Link href="/Login">Login </Nav.Link>
-          </Nav.Item> &&
-            <Nav.Item>
-              <Nav.Link href="/Register">Register</Nav.Link>
-            </Nav.Item>
+          </Nav.Item> 
+          // &&
+          //   <Nav.Item>
+          //     <Nav.Link href="/Register">Register</Nav.Link>
+          //   </Nav.Item>
           )}
+          
         </Nav>
       </Navbar>
     </>
