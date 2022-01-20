@@ -6,7 +6,6 @@ require("dotenv").config();
 
 module.exports = () => {
   router.post('/', (req, res) => {
-    console.log("inside event handler")
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
     port:465,
@@ -39,6 +38,7 @@ module.exports = () => {
     console.log("Message sent")
   }
   })
+
   
   })
   

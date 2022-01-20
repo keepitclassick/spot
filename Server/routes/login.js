@@ -29,5 +29,3 @@ module.exports = ({getUserByEmail}) => {
   return router;
 };
 
-
-
