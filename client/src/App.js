@@ -23,9 +23,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/email" element={<EmailForm />} />
           <Route path="/adopt" element={<Adopt />} />
-				<Route path="/register" element={<Registration />} />
-				<Route path="/about" element={<AboutUs />} />
-				<Route path="/resources" element={<Resources />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/resources" element={<Resources />} />
         </Routes>
       </div>
       <Footer />

@@ -27,11 +27,33 @@ ${tags[0]}, ${tags[1]} and ${tags[2]}.`
       : `Hi! I'm ${name} the ${gender} ${type}. Besides being adorable, I'm also 
 affectionate, adventurous and loyal.`;
 
+  let singlePet = {
+    id,
+    name,
+    breed,
+    location,
+    url,
+    type,
+    gender,
+  };
+
   return (
     <div className="pets__card" data-tesid="pets-comp">
       <div className="pets__card-box">
         <img src={img} alt="" />
-        <span id="name">{name}</span>
+        <span id="name">
+          {name}
+          <br />
+          <button
+            id="favourite"
+            class="btn"
+            onClick={() =>
+              localStorage.setItem("Favourites", JSON.stringify(singlePet))
+            }
+          >
+            <i class="fab fa-gratipay"></i>
+          </button>
+        </span>
         <span>
           <Accordion>
             <Accordion.Item eventKey="0">
