@@ -12,6 +12,7 @@ import Adopt from "./Components/Adopt";
 import Registration from "./Components/Registration";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
+import Dashboard from "./Components/Dashboard";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/register" element={<Registration />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/admin" element={<Dashboard />} />
         </Routes>
       </div>
       <Footer />
