@@ -6,7 +6,7 @@ export default function EmailForm() {
 
   const [values, setValues] = useState({
     name: "",
-    email: "",
+    mail: "",
     message: "",
     status: false
   })
@@ -69,7 +69,8 @@ export default function EmailForm() {
     </textarea>
        </div>
 
-<div className="msg">Message has been sent</div>
+{/* <div className="msg">Message has been sent</div> */}
+<div className="msg" style={{display: values.status ? "block" : "none"}}>Message has been sent</div>
        <div className="btn">
          <button type="submit">Send Email</button>
          

@@ -3,9 +3,6 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 require("dotenv").config();
 
-// router.get('/', () => {
-// resizeBy.send('Welcome to my email form')
-// });
 
 module.exports = () => {
   router.post('/', (req, res) => {
@@ -42,8 +39,6 @@ module.exports = () => {
     console.log("Message sent")
   }
   })
-  // transporter.close();
-  
   
   })
   

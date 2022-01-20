@@ -13,6 +13,7 @@ import Registration from "./Components/Registration";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 
+
 function App() {
   return (
     <div className="page-container">
