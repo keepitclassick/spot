@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@frontendmasters/pet": "^1.0.3",
     "@petfinder/petfinder-js": "^1.0.6",
     "@testing-library/jest-dom": "^5.16.1",
