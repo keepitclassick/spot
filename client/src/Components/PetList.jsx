@@ -22,13 +22,13 @@ const PetsList = ({ pets }) => {
             environment={pet.environment}
             tags={pet.tags}
             gender={pet.gender}
+            contact={pet.contact}
           />
         ))
       )}
     </div>
   );
 };
-
 PetsList.propTypes = {
   pets: PropTypes.array, // eslint-disable-line
 };

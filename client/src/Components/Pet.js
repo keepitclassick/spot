@@ -18,6 +18,7 @@ const Pet = ({
   tags,
   type,
   gender,
+  contact,
 }) => {
   let img = media[0].medium;
   let description =
@@ -27,16 +28,6 @@ ${tags[0]}, ${tags[1]} and ${tags[2]}.`
       : `Hi! I'm ${name} the ${gender} ${type}. Besides being adorable, I'm also 
 affectionate, adventurous and loyal.`;
 
-  let singlePet = {
-    id,
-    name,
-    breed,
-    location,
-    url,
-    type,
-    gender,
-  };
-
   return (
     <div className="pets__card" data-tesid="pets-comp">
       <div className="pets__card-box">
@@ -44,21 +35,20 @@ affectionate, adventurous and loyal.`;
         <span id="name">
           {name}
           <br />
-          <button
-            id="favourite"
-            class="btn"
-            onClick={() =>
-              localStorage.setItem("Favourites", JSON.stringify(singlePet))
-            }
-          >
-            <i class="fab fa-gratipay"></i>
-          </button>
         </span>
         <span>
           <Accordion>
             <Accordion.Item eventKey="0">
               <Accordion.Header>More about {name}</Accordion.Header>
-              <Accordion.Body>{description}</Accordion.Body>
+              <Accordion.Body>
+                {description}
+                <br />
+                <a
+                  href={`mailto:${contact.email}?subject=Potential%20Adoption&body=I%20would%20like%20to%20have%20more%20information%20about%20${name}.`}
+                >
+                  <button class="btn btn-dark">Email Shelter</button>
+                </a>
+              </Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </span>
@@ -66,7 +56,6 @@ affectionate, adventurous and loyal.`;
     </div>
   );
 };
-
 Pet.propTypes = {
   name: PropTypes.string,
   media: PropTypes.array, // eslint-disable-line
@@ -76,7 +65,7 @@ Pet.propTypes = {
 Pet.defaultProps = {
   name: "",
   media: [],
-  id: "",
+  id: null,
   age: "",
   description: "",
   location: "",

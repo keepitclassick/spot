@@ -61,9 +61,6 @@ const SearchPets = ({
     "500",
   ];
   const sortBy = ["recent", "distance"];
-  const isGoodWithKids = ["true", "false"];
-  const isGoodWithDogs = ["true", "false"];
-  const isGoodWithCats = ["true", "false"];
   const capitalize = ([first, ...rest]) =>
     first.toUpperCase() + rest.join("").toLowerCase(); // eslint-disable-line
 
@@ -147,6 +144,7 @@ const SearchPets = ({
     setGoodWithCats(value);
   };
 
+  // local storage stores strings so we use JSON to stringify for storage and parse to get out of storage
   useEffect(async () => {
     const { animals } = await petFinder.animal
       .search({
@@ -215,6 +213,7 @@ const SearchPets = ({
               Gender
               <select value={petGender} onChange={onGenderChange}>
                 <option>Select</option>
+
                 {genders.map((option) => (
                   <option value={option} key={option}>
                     {option}
@@ -227,6 +226,7 @@ const SearchPets = ({
               Distance(miles)
               <select value={petDistance} onChange={onDistanceChange}>
                 <option>Select</option>
+
                 {distanceList.map((option) => (
                   <option value={option} key={option}>
                     {capitalize(option)}
@@ -260,36 +260,24 @@ const SearchPets = ({
             </label>
 
             <label>
-              Kids
+              Kids?
               <select value={goodWithKids} onChange={onGoodWithKidsChange}>
-                <option>Select</option>
-                {isGoodWithKids.map((option) => (
-                  <option value={option} key={option}>
-                    {option}
-                  </option>
-                ))}
+                <option value="true">Yes</option>
+                <option value="false">No</option>
               </select>
             </label>
             <label>
-              Dogs
+              Dogs?
               <select value={goodWithDogs} onChange={onGoodWithDogsChange}>
-                <option>Select</option>
-                {isGoodWithDogs.map((option) => (
-                  <option value={option} key={option}>
-                    {option}
-                  </option>
-                ))}
+                <option value="true">Yes</option>
+                <option value="false">No</option>
               </select>
             </label>
             <label>
-              Cats
+              Cats?
               <select value={goodWithCats} onChange={onGoodWithCatsChange}>
-                <option>Select</option>
-                {isGoodWithCats.map((option) => (
-                  <option value={option} key={option}>
-                    {option}
-                  </option>
-                ))}
+                <option value="true">Yes</option>
+                <option value="false">No</option>
               </select>
             </label>
           </div>
