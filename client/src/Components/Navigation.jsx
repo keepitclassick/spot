@@ -28,9 +28,11 @@ export default function Navigation() {
           <Nav.Item>
             <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/Adopt">Adopt</Nav.Link>
-          </Nav.Item>
+          {loggedIn ? (
+            <Nav.Item>
+              <Nav.Link href="/Adopt">Adopt</Nav.Link>
+            </Nav.Item>
+          ) : null}
           <Nav.Item>
             <Nav.Link href="/Resources">Resources</Nav.Link>
           </Nav.Item>
@@ -41,17 +43,17 @@ export default function Navigation() {
             <Nav.Link href="/email">Contact</Nav.Link>
           </Nav.Item>
           {loggedIn ? (
-          <button>Logout</button>
+            <button onClick={() => localStorage.clear()}>Logout</button>
           ) : (
             <Nav.Item>
-            <Nav.Link href="/Login">Login </Nav.Link>
-          </Nav.Item> 
-          // &&
-          //   <Nav.Item>
-          //     <Nav.Link href="/Register">Register</Nav.Link>
-          //   </Nav.Item>
+              <Nav.Link href="/Login">Login </Nav.Link>
+            </Nav.Item>
           )}
-          
+          {!loggedIn ? (
+            <Nav.Item>
+              <Nav.Link href="/Register">Register</Nav.Link>
+            </Nav.Item>
+          ) : null}
         </Nav>
       </Navbar>
     </>
