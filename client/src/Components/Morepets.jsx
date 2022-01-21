@@ -1,5 +1,4 @@
 import Image from "react-bootstrap/Image";
-import Container from "react-bootstrap/Container";
 
 export default function Morepets() {
   return (

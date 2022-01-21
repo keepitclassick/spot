@@ -16,13 +16,16 @@ export default function Registration() {
       email: email,
       phone_number: cell,
       password: password,
-      favourited_pets: "",
       location: location,
-    }).then((res) => {
-      console.log(res);
-    });
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        window.alert("Please fill all fields.");
+      });
   };
-
   return (
     <div id="background">
       <Form id="register">
@@ -30,6 +33,7 @@ export default function Registration() {
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control
+            class="reg"
             id="email"
             type="text"
             placeholder="Enter your name"
@@ -38,10 +42,10 @@ export default function Registration() {
             }}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3">
           <Form.Label>Email address</Form.Label>
           <Form.Control
-            id="email"
+            class="reg"
             type="email"
             placeholder="Enter email"
             onChange={(e) => {
@@ -55,7 +59,7 @@ export default function Registration() {
         <Form.Group className="mb-3">
           <Form.Label>Location</Form.Label>
           <Form.Control
-            id="email"
+            class="reg"
             type="text"
             placeholder="Enter location"
             onChange={(e) => {
@@ -66,7 +70,7 @@ export default function Registration() {
         <Form.Group className="mb-3">
           <Form.Label>Cell Phone</Form.Label>
           <Form.Control
-            id="email"
+            class="reg"
             type="text"
             placeholder="Enter phone number"
             onChange={(e) => {
@@ -77,7 +81,7 @@ export default function Registration() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            id="email"
+            class="reg"
             type="password"
             placeholder="Password"
             onChange={(e) => {

@@ -2,70 +2,60 @@ import "./About.scss";
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
 export default function AboutUs() {
   return (
-    
     <body>
-<div class="about">
-  <div class="inner">
-    <h1>About Us</h1>
-    <p class="text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus in hendrerit gravida rutrum quisque non tellus. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. In metus vulputate eu scelerisque felis imperdiet proin fermentum. Dui faucibus in ornare quam viverra orci sagittis eu volutpat. Molestie at elementum eu facilisis sed odio morbi quis. Elit pellentesque habitant morbi tristique senectus. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Id porta nibh venenatis cras sed felis eget. Aenean pharetra magna ac placerat. Ut enim blandit volutpat maecenas volutpat blandit aliquam. Nisl vel pretium lectus quam id.
+      <div class="about">
+        <div class="inner">
+          <h1>About Us</h1>
+          <p class="text">
+            Spot's mission is to see each and every great pet with an equally
+            great owner. By allowing an advanced search, we give you the power
+            to find the pet of your dreams.
+          </p>
+        </div>
+      </div>
 
-      Spot is an app that helps you find an adoptable pet based on your lifestyle.
-      
-      Why Adopt?
-
-    </p>
-  </div>
-</div>
-
-<div className="questions">
-<Container>
-    <Col>FAQ's</Col>
-    <Accordion defaultActiveKey="0">
-  <Accordion.Item eventKey="0">
-    <Accordion.Header>I've found a pet that I'm interested in, what's next?</Accordion.Header>
-    <Accordion.Body>
-      Fill out the contact form, found under the "Contact" tab and we'll get you in touch directly with the shelter!
-    </Accordion.Body>
-  </Accordion.Item>
-  <Accordion.Item eventKey="1">
-    <Accordion.Header>How much will it cost?</Accordion.Header>
-    <Accordion.Body>
-      Pet adoption fees vary from shelter to shelter. These fees are based on training, spay/neuter, housing, veterinary/medical care. Get in contact with 
-      us and we'll assist you in the adoption process.
-    </Accordion.Body>
-  </Accordion.Item>
-  <Accordion.Item eventKey="2">
-    <Accordion.Header>Question #3</Accordion.Header>
-    <Accordion.Body>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </Accordion.Body>
-  </Accordion.Item>
-  <Accordion.Item eventKey="3">
-    <Accordion.Header>Question #4</Accordion.Header>
-    <Accordion.Body>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </Accordion.Body>
-  </Accordion.Item>
-</Accordion>
-  </Container>
-  </div>
-
-</body>
-
-
-    
-  )
+      <div className="questions">
+        <Container>
+          <Col>FAQ's</Col>
+          <Accordion defaultActiveKey="0">
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                I've found a pet that I'm interested in, what's next?
+              </Accordion.Header>
+              <Accordion.Body>
+                Click the "email shelter" button to start a conversation!
+                Remember, this is just the start of the process, many shelters
+                have an application that will take place after interest has been
+                expressed.
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>How much will it cost?</Accordion.Header>
+              <Accordion.Body>
+                Pet adoption fees vary from shelter to shelter. These fees are
+                based on training, spay/neuter, housing, veterinary/medical
+                care. Get in contact with us and we'll assist you in the
+                adoption process.
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2">
+              <Accordion.Header>
+                I'm having technical issues with the site. Help?
+              </Accordion.Header>
+              <Accordion.Body>
+                Please contact use using the contact page! We are ready and
+                willing to assist each day.
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="3">
+              <Accordion.Header>Do I need to register?</Accordion.Header>
+              <Accordion.Body>
+                Yes, in order to search for a pet you will need to register.
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </Container>
+      </div>
+    </body>
+  );
 }

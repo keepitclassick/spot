@@ -5,7 +5,9 @@ $dark: rgb(255, 152, 35);
   margin: 0 auto;
   max-width: 320px;
 }
-
+.reg {
+  box-shadow: 1px 1px 4px 1px rgb(255 152 35);
+}
 .btn button {
   width: 150px;
   font-size: 18px;

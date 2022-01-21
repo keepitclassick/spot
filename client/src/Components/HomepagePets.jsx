@@ -1,9 +1,4 @@
-import Image from "react-bootstrap/Image";
-import Container from "react-bootstrap/Container";
 import "./HomepagePets.scss";
-import Morepets from "./Morepets";
-import Calltoaction from "./Calltoaction";
-import Banner from "./Banner";
 
 export default function HomepagePets() {
   return (

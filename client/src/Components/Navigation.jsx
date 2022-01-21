@@ -6,7 +6,8 @@ export default function Navigation() {
   //conditionally render login/register
   //{userID ? logout: register}
 
-  const [loggedIn, setLoggedIn] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+
   useEffect(() => {
     const getUserID = localStorage.getItem("userID");
     setLoggedIn(getUserID);
@@ -14,7 +15,7 @@ export default function Navigation() {
 
   return (
     <>
-      <Navbar id="nav" bg="dark" variant="dark">
+      <Navbar expand="lg" bg="dark" variant="dark">
         <Navbar.Brand id="logo" href="#home">
           <img
             alt=""
@@ -28,11 +29,6 @@ export default function Navigation() {
           <Nav.Item>
             <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
-          {loggedIn ? (
-            <Nav.Item>
-              <Nav.Link href="/Adopt">Adopt</Nav.Link>
-            </Nav.Item>
-          ) : null}
           <Nav.Item>
             <Nav.Link href="/Resources">Resources</Nav.Link>
           </Nav.Item>
@@ -42,6 +38,11 @@ export default function Navigation() {
           <Nav.Item>
             <Nav.Link href="/email">Contact</Nav.Link>
           </Nav.Item>
+          {loggedIn ? (
+            <Nav.Item>
+              <Nav.Link href="/Adopt">Adopt</Nav.Link>
+            </Nav.Item>
+          ) : null}
           {loggedIn ? (
             <button onClick={() => localStorage.clear()}>Logout</button>
           ) : (
