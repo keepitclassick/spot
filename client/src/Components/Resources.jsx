@@ -14,7 +14,7 @@ export default function Resources() {
               <img
                 class="card-img-top"
                 src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBldHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-                alt="Card image cap"
+                alt="Cat lying in bed"
                 height="300px"
               />
               <div class="card-body">
@@ -36,7 +36,7 @@ export default function Resources() {
               <img
                 class="card-img-top"
                 src="https://images.unsplash.com/photo-1455103493930-a116f655b6c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-                alt="Card image cap"
+                alt="Dog lying on area rug"
                 height="300px"
               />
               <div class="card-body">
@@ -58,7 +58,7 @@ export default function Resources() {
               <img
                 class="card-img-top"
                 src="https://images.unsplash.com/photo-1516139008210-96e45dccd83b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fHBldHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-                alt="Card image cap"
+                alt="Cat peeking out"
                 height="300px"
               />
               <div class="card-body">
@@ -84,13 +84,12 @@ export default function Resources() {
               <img
                 class="card-img-top"
                 src="https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-                alt="Card image cap"
+                alt="A man hugging his dog"
                 height="300px"
               />
               <div class="card-body">
                 <h5 class="card-title">
-                  10 Reasons Adopting a shelter dog is the best thing you will
-                  ever do
+                  10 Reasons Adopting a shelter dog is the best thing can do
                 </h5>
                 <p class="card-text"></p>
                 <a
@@ -107,7 +106,7 @@ export default function Resources() {
               <img
                 class="card-img-top"
                 src="https://images.unsplash.com/photo-1508675801627-066ac4346a61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1165&q=80"
-                alt="Card image cap"
+                alt="a child hugging a puppy wih a bowtie"
                 height="300px"
               />
               <div class="card-body">
@@ -129,7 +128,7 @@ export default function Resources() {
               <img
                 class="card-img-top"
                 src="https://images.unsplash.com/photo-1617691763432-8b45e6748b71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80"
-                alt="Card image cap"
+                alt="A lizard"
                 height="300px"
               />
               <div class="card-body">

@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 
 import React, { useEffect, useState } from "react";
 export default function Navigation() {
@@ -12,33 +12,30 @@ export default function Navigation() {
     const getUserID = localStorage.getItem("userID");
     setLoggedIn(getUserID);
   }, []);
-  
 
   return (
-    <>
-      <Navbar expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand id="logo" href="#home">
-          <img
-            alt=""
-            src="./images/0D7BF294-2098-47E2-AE71-CCE624CCE1AC_4_5005_c.jpeg"
-            width="300"
-            height="100"
-            className="d-inline-block align-top"
-          />{" "}
-        </Navbar.Brand>
-        <Nav id="links" className="justify-content-end">
-          <Nav.Item>
-            <Nav.Link href="/">Home</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/Resources">Resources</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/About">About</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/email">Contact</Nav.Link>
-          </Nav.Item>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar.Brand id="logo" href="#home">
+        <img
+          alt=""
+          src="./images/0D7BF294-2098-47E2-AE71-CCE624CCE1AC_4_5005_c.jpeg"
+          width="300"
+          height="100"
+          className="d-inline-block align-top"
+        />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/Resources">Resources</Nav.Link>
+
+          <NavDropdown title="More" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="/email">Contact</NavDropdown.Item>
+            <NavDropdown.Item href="/About">About</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+        <Nav>
           {loggedIn ? (
             <Nav.Item>
               <Nav.Link href="/Adopt">Adopt</Nav.Link>
@@ -57,7 +54,7 @@ export default function Navigation() {
             </Nav.Item>
           ) : null}
         </Nav>
-      </Navbar>
-    </>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
