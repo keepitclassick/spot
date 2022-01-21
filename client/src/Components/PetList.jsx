@@ -24,6 +24,7 @@ const PetsList = ({ pets }) => {
             tags={pet.tags}
             gender={pet.gender}
             contact={pet.contact}
+            attributes={pet.attributes}
           />
         ))
       )}

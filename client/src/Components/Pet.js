@@ -17,6 +17,7 @@ const Pet = ({
   gender,
   contact,
   environment,
+  attributes,
 }) => {
   const img = media[0].medium;
   const description =
@@ -39,6 +40,25 @@ affectionate, adventurous and loyal.`;
       ? "✅  Good with dogs"
       : "🚫  Not appropriate for a home with dogs";
 
+  const houseTrained =
+    attributes.house_trained === true
+      ? "✅  House trained"
+      : "🚫  Not house trained";
+
+  const shotsCurrent =
+    attributes.shots_current === true
+      ? "✅  Shots current"
+      : "🚫  Shots not current";
+
+  const spayedNeutered =
+    attributes.spayed_neutered === true
+      ? "✅  Spayed/Neutered"
+      : "🚫  Not Spayed or Neutered";
+
+  const specialNeeds =
+    attributes.special_needs === true
+      ? "✅  Special Needs"
+      : "🚫  No Special Needs";
   return (
     <div className="pets__card" data-tesid="pets-comp">
       <div className="pets__card-box">
@@ -66,6 +86,18 @@ affectionate, adventurous and loyal.`;
                 <br />
                 {dogs}
                 <br />
+                <br />
+                <u>
+                  <b>Good to know:</b>
+                </u>
+                <br />
+                {houseTrained}
+                <br />
+                {shotsCurrent}
+                <br />
+                {spayedNeutered}
+                <br />
+                {specialNeeds}
                 <div class="map"></div>
                 <a
                   href={`mailto:${contact.email}?subject=Potential%20Adoption&body=I%20would%20like%20to%20have%20more%20information%20about%20${name}.`}
