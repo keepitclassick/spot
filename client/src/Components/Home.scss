@@ -1,0 +1,54 @@
+.colored-section {
+  background-color: rgb(255, 152, 35);
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+.big-heading {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.icon:hover{
+  color: #fcbf49;
+}
+
+.card{
+  margin-bottom: 10px;
+}
+
+h3.big-heading {
+  text-align: center;
+}
+h3.feature-title {
+  font-family: 'Lato';
+  font-weight: 900;
+}
+
+.container-fluid{
+  padding: 7% 15%;
+}
+
+#features {
+  position: relative;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+// .feature-box {
+//   padding: 4.5%;
+// }
+
+p {
+  font-size: 20px;
+}
+
+h1 {
+  word-spacing: 30px;
+}
