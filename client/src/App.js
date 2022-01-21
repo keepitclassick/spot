@@ -13,6 +13,7 @@ import Registration from "./Components/Registration";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import Dashboard from "./Components/Dashboard";
+import Home from "./Components/Home";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/admin" element={<Dashboard />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </div>
       <Footer />

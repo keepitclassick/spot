@@ -64,9 +64,43 @@ export default function Home() {
     </div>
   </div>
   </div>
-  
-
         </section>
+
+
+           {/* Features */}
+           <section class="colored-section" id="features">
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="feature-box col-lg-4">
+      <i class="icon fas fa-dog fa-8x"></i>
+      <h3 class="feature-title">So easy to use, even your dog could do it.</h3>
+    </div>
+
+    <div class="feature-box col-lg-4">
+      <i class="icon fas fa-paw fa-8x"></i>
+      <h3 class="feature-title">We have all the pets, the greatest pets.</h3>
+      
+    </div>
+
+    <div class="feature-box col-lg-4">
+      <i class="icon fas fa-cat fa-8x"></i>
+      <h3 class="feature-title">Fall in love with our pets today.</h3>
+     
+    </div>
+  </div>
+</div>
+</section>
+
+{/* Call to action */}
+<section class="white-section" id="cta">
+
+<div class="container-fluid">
+  <h3 class="big-heading">Find a pet to adopt today</h3>
+</div>
+</section>
+
 
     </>
   )
