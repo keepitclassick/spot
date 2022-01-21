@@ -1,17 +1,22 @@
 import "./Home.scss"
-
+import CarouselContainer from "./CarouselContainer";
 
 export default function Home() {
   return (
+
     <>
+      <CarouselContainer />
+    {/* Slogan */}
     <section class="colored-section" id="cta">
     <div class="row">
     <h1 class="big-heading">See Spot. Adopt Spot. Love Spot.</h1>
         </div> 
        
- {/* Pet cards */}
 
- <div class="row-md"></div>
+
+        {/* Pet cards */}
+
+        <div class="row-md"></div>
 
 <div id="examplepets" class="row-md-6">
   <div class="card-group">
@@ -67,11 +72,12 @@ export default function Home() {
     </div>
   </div>
   </div>
+  
+
         </section>
 
-
-           {/* Features */}
-           <section class="colored-section" id="features">
+        {/* Features */}
+        <section class="colored-section" id="features">
 
 <div class="container-fluid">
 
@@ -105,7 +111,9 @@ export default function Home() {
 </section>
 
 
-    </>
-  )
-}
 
+
+
+   </>
+  );
+}
