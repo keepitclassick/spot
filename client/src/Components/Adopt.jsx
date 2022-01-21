@@ -39,7 +39,7 @@ const SearchPets = ({
   const [sort, setSort] = useState(sortType || "distance");
   const [goodWithKids, setGoodWithKids] = useState("true");
   const [goodWithDogs, setGoodWithDogs] = useState("true");
-  const [goodWithCats, setGoodWithCats] = useState("true");
+  const [goodWithCats, setGoodWithCats] = useState("false");
 
   const sizes = ["Small", "Medium", "Large"];
   const genders = ["Male", "Female"];
@@ -144,7 +144,6 @@ const SearchPets = ({
     setGoodWithCats(value);
   };
 
-  // local storage stores strings so we use JSON to stringify for storage and parse to get out of storage
   useEffect(async () => {
     const { animals } = await petFinder.animal
       .search({
@@ -267,14 +266,14 @@ const SearchPets = ({
               </select>
             </label>
             <label>
-              Dogs?
+              Cats?
               <select value={goodWithDogs} onChange={onGoodWithDogsChange}>
                 <option value="true">Yes</option>
                 <option value="false">No</option>
               </select>
             </label>
             <label>
-              Cats?
+              Dogs?
               <select value={goodWithCats} onChange={onGoodWithCatsChange}>
                 <option value="true">Yes</option>
                 <option value="false">No</option>

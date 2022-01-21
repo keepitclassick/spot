@@ -13,7 +13,6 @@ import Registration from "./Components/Registration";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import Dashboard from "./Components/Dashboard";
-import Details from "./Components/details";
 
 function App() {
   return (
@@ -29,7 +28,6 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/admin" element={<Dashboard />} />
-          <Route path="/details/:id" element={<Details />} />
         </Routes>
       </div>
       <Footer />
