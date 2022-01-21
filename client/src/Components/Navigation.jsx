@@ -27,30 +27,46 @@ export default function Navigation() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/Resources">Resources</Nav.Link>
+          <Nav.Link id="link" href="/">
+            Home
+          </Nav.Link>
+          <Nav.Link id="link" href="/Resources">
+            Resources
+          </Nav.Link>
 
           <NavDropdown title="More" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/email">Contact</NavDropdown.Item>
-            <NavDropdown.Item href="/About">About</NavDropdown.Item>
+            <NavDropdown.Item id="link" href="/email">
+              Contact
+            </NavDropdown.Item>
+            <NavDropdown.Item id="link" href="/About">
+              About
+            </NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Nav>
           {loggedIn ? (
             <Nav.Item>
-              <Nav.Link href="/Adopt">Adopt</Nav.Link>
+              <Nav.Link id="link" href="/Adopt">
+                Adopt
+              </Nav.Link>
             </Nav.Item>
           ) : null}
           {loggedIn ? (
-            <button onClick={() => localStorage.clear()}>Logout</button>
+            <button id="link" onClick={() => localStorage.clear()}>
+              Logout{" "}
+            </button>
           ) : (
             <Nav.Item>
-              <Nav.Link href="/Login">Login </Nav.Link>
+              <Nav.Link id="link" href="/Login">
+                Login{" "}
+              </Nav.Link>
             </Nav.Item>
           )}
           {!loggedIn ? (
             <Nav.Item>
-              <Nav.Link href="/Register">Register</Nav.Link>
+              <Nav.Link id="link" href="/Register">
+                Register
+              </Nav.Link>
             </Nav.Item>
           ) : null}
         </Nav>

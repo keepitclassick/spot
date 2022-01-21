@@ -5,7 +5,12 @@ $dark: rgb(255, 152, 35);
   font-family: "Luckiest Guy", cursive;
 }
 
-#links {
+#link {
+  font-size: 1.5em;
+  font-family: "Luckiest Guy", cursive;
+  justify-content: space-between;
+}
+#collasible-nav-dropdown {
   font-size: 1.5em;
   font-family: "Luckiest Guy", cursive;
   justify-content: space-between;
