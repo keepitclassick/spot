@@ -1,7 +1,7 @@
 import "./Home.scss";
 import { Fragment } from "react";
-
-
+import { Carousel } from "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Home() {
   return (
@@ -40,6 +40,7 @@ export default function Home() {
   </div>
 </div>
 </section>
+
 
    </>
   );
