@@ -6,9 +6,7 @@
 .white-section {
   background-color: #fff;
 }
-h1 .big-heading{
-  word-spacing: 30px;
-}
+
 .big-heading {
   font-family: "Luckiest Guy", cursive;
   font-size: 3.5rem;
@@ -16,7 +14,7 @@ h1 .big-heading{
 }
 
 .icon:hover{
-  color: rgb(255, 152, 35);
+  color: #fcbf49;
 }
 
 .card{
@@ -25,4 +23,32 @@ h1 .big-heading{
 
 h3.big-heading {
   text-align: center;
+}
+h3.feature-title {
+  font-family: 'Lato';
+  font-weight: 900;
+}
+
+.container-fluid{
+  padding: 7% 15%;
+}
+
+#features {
+  position: relative;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+// .feature-box {
+//   padding: 4.5%;
+// }
+
+p {
+  font-size: 20px;
+}
+
+h1 {
+  word-spacing: 30px;
 }

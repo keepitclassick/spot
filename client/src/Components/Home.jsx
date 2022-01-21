@@ -1,19 +1,23 @@
 import "./Home.scss";
-import { Fragment } from "react";
-import { Carousel } from "bootstrap";
+import CarouselContainer from "./CarouselContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, useEffect } from "react";
+
+
 
 export default function Home() {
   return (
+
     <>
+      <CarouselContainer />
     {/* Slogan */}
     <section class="colored-section" id="cta">
     <div class="row">
+    <h1 class="big-heading">See Spot. Adopt Spot. Love Spot.</h1>
+        </div> 
+       
 
-        <div class="col-lg-6">
-          <h1 class="big-heading">See spot. Love spot. Adopt spot.</h1>
-        </div>
-        </div>
+
         {/* Pet cards */}
 
         <div class="row-md"></div>
@@ -77,34 +81,33 @@ export default function Home() {
         </section>
 
         {/* Features */}
-        <section class="white-section" id="features">
+        <section class="colored-section" id="features">
 
 <div class="container-fluid">
 
   <div class="row">
     <div class="feature-box col-lg-4">
-      <i class="icon fas fa-check-circle fa-4x"></i>
-      <h3 class="feature-title">Easy to use.</h3>
-      {/* <p>So easy to use, even your dog could do it.</p> */}
+      <i class="icon fas fa-dog fa-8x"></i>
+      <h3 class="feature-title">So easy to use, even your dog could do it.</h3>
     </div>
 
     <div class="feature-box col-lg-4">
-      <i class="icon fas fa-bullseye fa-4x"></i>
-      <h3 class="feature-title">Elite Clientele</h3>
-      <p>We have all the pets, the greatest pets.</p>
+      <i class="icon fas fa-paw fa-8x"></i>
+      <h3 class="feature-title">We have all the pets, the greatest pets.</h3>
+      
     </div>
 
     <div class="feature-box col-lg-4">
-      <i class="icon fas fa-heart fa-4x"></i>
-      <h3 class="feature-title">Guaranteed to love.</h3>
-      <p>Fall in love with our pets today.</p>
+      <i class="icon fas fa-cat fa-8x"></i>
+      <h3 class="feature-title">Fall in love with our pets today.</h3>
+     
     </div>
   </div>
 </div>
 </section>
 
 {/* Call to action */}
-<section class="colored-section" id="cta">
+<section class="white-section" id="cta">
 
 <div class="container-fluid">
   <h3 class="big-heading">Find a pet to adopt today</h3>
