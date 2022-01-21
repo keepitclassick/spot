@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import Pet from "./Pet";
+import { useState } from "react";
 
 const PetsList = ({ pets }) => {
+  const [favourites, setFavourites] = useState([]);
+
   return (
     <div className="pets__wrapper" data-testid="pets-list-id">
       {pets.length === 0 ? (
@@ -25,6 +28,8 @@ const PetsList = ({ pets }) => {
             gender={pet.gender}
             contact={pet.contact}
             attributes={pet.attributes}
+            favourites={favourites}
+            setFavourites={setFavourites}
           />
         ))
       )}

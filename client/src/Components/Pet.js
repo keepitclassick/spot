@@ -1,9 +1,9 @@
-import React from "react";
+import { React, useState } from "react";
 import PropTypes from "prop-types";
 import "./AdoptStyles.scss";
 import { Accordion } from "react-bootstrap";
 
-const Pet = ({
+export default function Pet({
   id,
   name,
   media,
@@ -18,7 +18,29 @@ const Pet = ({
   contact,
   environment,
   attributes,
-}) => {
+  setFavourites,
+  favourites,
+}) {
+  const favPetDetails = {
+    id,
+    name,
+    media,
+    breeds,
+    location,
+    distance,
+    sort,
+    url,
+    tags,
+    type,
+    gender,
+    contact,
+    environment,
+    attributes,
+  };
+  const addFavouritePet = (Pet) => {
+    const newFavList = [...favourites, Pet];
+    setFavourites(newFavList);
+  };
   const img = media[0].medium;
   const description =
     tags.length > 2
@@ -59,13 +81,21 @@ affectionate, adventurous and loyal.`;
     attributes.special_needs === true
       ? "✅  Special Needs"
       : "🚫  No Special Needs";
+
   return (
     <div className="pets__card" data-tesid="pets-comp">
       <div className="pets__card-box">
         <img src={img} alt="" />
         <span id="name">
           <h5>{name}</h5>
-          <br />
+
+          <button
+            id="favourite"
+            class="btn"
+            onClick={() => addFavouritePet(favPetDetails)}
+          >
+            <i class="fab fa-gratipay"></i>
+          </button>
         </span>
         <span>
           <Accordion>
@@ -111,7 +141,7 @@ affectionate, adventurous and loyal.`;
       </div>
     </div>
   );
-};
+}
 Pet.propTypes = {
   name: PropTypes.string,
   media: PropTypes.array, // eslint-disable-line
@@ -133,5 +163,3 @@ Pet.defaultProps = {
   breeds: "",
   environment: "",
 };
-
-export default Pet;
