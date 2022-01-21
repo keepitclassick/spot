@@ -19,12 +19,10 @@ export default function EmailForm() {
   }
 
  const submitEmail = (e) => {
-   console.log("handling submit event")
    e.preventDefault();
    axios
    .post('/api/email', values)
    .then((res) => {
-     console.log("Server responded")
      setValues({
        name: "",
        email: "",

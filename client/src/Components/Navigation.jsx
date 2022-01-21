@@ -1,6 +1,17 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 
+import React, { useEffect, useState } from "react";
 export default function Navigation() {
+  //useEffect check localstorage for userID
+  //conditionally render login/register
+  //{userID ? logout: register}
+
+  const [loggedIn, setLoggedIn] = useState("");
+  useEffect(() => {
+    const getUserID = localStorage.getItem("userID");
+    setLoggedIn(getUserID);
+  }, []);
+
   return (
     <>
       <Navbar id="nav" bg="dark" variant="dark">
@@ -29,12 +40,18 @@ export default function Navigation() {
           <Nav.Item>
             <Nav.Link href="/email">Contact</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/Register">Register</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/Login">Login</Nav.Link>
-          </Nav.Item>
+          {loggedIn ? (
+          <button>Logout</button>
+          ) : (
+            <Nav.Item>
+            <Nav.Link href="/Login">Login </Nav.Link>
+          </Nav.Item> 
+          // &&
+          //   <Nav.Item>
+          //     <Nav.Link href="/Register">Register</Nav.Link>
+          //   </Nav.Item>
+          )}
+          
         </Nav>
       </Navbar>
     </>
