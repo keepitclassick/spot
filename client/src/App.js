@@ -14,6 +14,7 @@ import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import Dashboard from "./Components/Dashboard";
 import Details from "./Components/details";
+import Home from "./Components/Home";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/details/:id" element={<Details />} />
+          <Route path="home" element={<Home />} />
         </Routes>
       </div>
       <Footer />
