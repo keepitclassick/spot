@@ -2,7 +2,7 @@ import { react, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./AdoptStyles.scss";
 import { Accordion } from "react-bootstrap";
-import PetList from "./PetList";
+import Axios from "axios";
 
 export default function Pet({
   id,
@@ -22,6 +22,8 @@ export default function Pet({
   setFavourites,
   favourites,
 }) {
+  const [favPet, setFavPet] = useState(false);
+
   const favPetDetails = {
     id,
     name,
@@ -41,6 +43,19 @@ export default function Pet({
   const addFavouritePet = (Pet) => {
     const newFavList = [...favourites, Pet];
     setFavourites(newFavList);
+    setFavPet(true);
+
+    const user = JSON.parse(localStorage.getItem("userID"));
+    const pet = JSON.parse(localStorage.getItem("Favourites"));
+    //console.log(user, pet);
+    Axios.post("http://localhost:3001/api/favourites", {
+      users_id: user.id,
+      pets_id: pet.id,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   };
 
   const img = media[0].medium;
@@ -91,7 +106,11 @@ affectionate, adventurous and loyal.`;
           <img src={img} alt="" />
           <span id="name">
             <h5>{name}</h5>
-
+            {favPet ? (
+              <div class="favourite">
+                <h1>favourite</h1>
+              </div>
+            ) : null}
             <button
               id="favourite"
               class="btn"

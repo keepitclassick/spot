@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { ANIMALS } from "@frontendmasters/pet";
 import PetList from "./PetList";
 import "./AdoptStyles.scss";
+import { Spinner } from "react-bootstrap";
 
 const SearchPets = ({
   pets = [],
@@ -29,12 +30,12 @@ const SearchPets = ({
   goodWithCat,
   filterGoodWithCat,
 }) => {
-  const [petSize, setPetSize] = useState(size || null);
+  const [petSize, setPetSize] = useState(size);
   const [petFilter, setPetFilter] = useState(filter);
-  const [petGender, setPetGender] = useState(gender || "All");
+  const [petGender, setPetGender] = useState(gender || "female");
   const [updatePets, setUpdatePets] = useState(pets || []);
   const [petLimit, setPetLimit] = useState(limit || "20");
-  const [petLocation, setPetLocation] = useState(location || "");
+  const [petLocation, setPetLocation] = useState(location || "n7l 4j3");
   const [petDistance, setDistance] = useState("100");
   const [sort, setSort] = useState(sortType || "distance");
   const [goodWithKids, setGoodWithKids] = useState("true");
@@ -83,6 +84,7 @@ const SearchPets = ({
       .catch((error) => error);
 
     setUpdatePets(animals);
+
     filterPets(petFilter);
     filterSize(petSize);
     filterGender(petGender);
@@ -159,136 +161,143 @@ const SearchPets = ({
     setUpdatePets(animals);
   }, []);
 
-  return (
-    <div className="main__wrapper" data-testid="search-pets-id">
-      <img
-        id="adopt-header"
-        src="https://i.ibb.co/cLf3RnK/e-Bay-Store-Billboard-1280x290-px.jpg"
-      />
-      <div id="search-form" className="search__form__wrapper">
-        <form
-          data-testid="search-pets-form"
-          className="search__form__wrapper-form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            petsRequest();
-          }}
-        >
-          <div className="search__form__wrapper-form-box">
-            <label>
-              Location
-              <input
-                class="form-control  form-control-sm"
-                type="text"
-                placeholder="Postal Code"
-                value={petLocation}
-                onChange={onLocationChange}
-              />
-            </label>
+  useEffect(() => {
+    localStorage.setItem("Favourites", JSON.stringify([...favourites]));
+  }, [favourites]);
 
-            <label>
-              Animal
-              <select value={petFilter} onChange={onFilterChange}>
-                <option>Select</option>
-                {ANIMALS.map((option) => (
-                  <option value={option} key={option}>
-                    {capitalize(option)}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Size
-              <select value={petSize} onChange={onSizeChange}>
-                <option>Select</option>
-                {sizes.map((option) => (
-                  <option value={option} key={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+  const favs = JSON.parse(localStorage.getItem("favorites"));
+  {
+    return (
+      <div className="main__wrapper" data-testid="search-pets-id">
+        <img
+          id="adopt-header"
+          src="https://i.ibb.co/cLf3RnK/e-Bay-Store-Billboard-1280x290-px.jpg"
+        />
+        <div id="search-form" className="search__form__wrapper">
+          <form
+            data-testid="search-pets-form"
+            className="search__form__wrapper-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              petsRequest();
+            }}
+          >
+            <div className="search__form__wrapper-form-box">
+              <label>
+                Location
+                <input
+                  class="form-control  form-control-sm"
+                  type="text"
+                  placeholder="Postal Code"
+                  value={petLocation}
+                  onChange={onLocationChange}
+                />
+              </label>
 
-            <label>
-              Gender
-              <select value={petGender} onChange={onGenderChange}>
-                <option>Select</option>
+              <label>
+                Animal
+                <select value={petFilter} onChange={onFilterChange}>
+                  <option>Select</option>
+                  {ANIMALS.map((option) => (
+                    <option value={option} key={option}>
+                      {capitalize(option)}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Size
+                <select value={petSize} onChange={onSizeChange}>
+                  <option>Select</option>
+                  {sizes.map((option) => (
+                    <option value={option} key={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-                {genders.map((option) => (
-                  <option value={option} key={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+              <label>
+                Gender
+                <select value={petGender} onChange={onGenderChange}>
+                  <option>Select</option>
 
-            <label>
-              Distance(miles)
-              <select value={petDistance} onChange={onDistanceChange}>
-                <option>Select</option>
+                  {genders.map((option) => (
+                    <option value={option} key={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-                {distanceList.map((option) => (
-                  <option value={option} key={option}>
-                    {capitalize(option)}
-                  </option>
-                ))}
-              </select>
-            </label>
+              <label>
+                Distance(miles)
+                <select value={petDistance} onChange={onDistanceChange}>
+                  <option>Select</option>
 
-            <label>
-              Sort By
-              <select value={sort} onChange={onSortChange}>
-                <option>Select</option>
-                {sortBy.map((option) => (
-                  <option value={option} key={option}>
-                    {capitalize(option)}
-                  </option>
-                ))}
-              </select>
-            </label>
+                  {distanceList.map((option) => (
+                    <option value={option} key={option}>
+                      {capitalize(option)}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-            <label>
-              Limit
-              <select value={petLimit} onChange={onLimitChange}>
-                <option>Select</option>
-                {limits.map((option) => (
-                  <option value={option} key={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+              <label>
+                Sort By
+                <select value={sort} onChange={onSortChange}>
+                  <option>Select</option>
+                  {sortBy.map((option) => (
+                    <option value={option} key={option}>
+                      {capitalize(option)}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-            <label>
-              Kids?
-              <select value={goodWithKids} onChange={onGoodWithKidsChange}>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
-            </label>
-            <label>
-              Cats?
-              <select value={goodWithDogs} onChange={onGoodWithDogsChange}>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
-            </label>
-            <label>
-              Dogs?
-              <select value={goodWithCats} onChange={onGoodWithCatsChange}>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
-            </label>
-          </div>
+              <label>
+                Limit
+                <select value={petLimit} onChange={onLimitChange}>
+                  <option>Select</option>
+                  {limits.map((option) => (
+                    <option value={option} key={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-          <button type="submit">Find Pet</button>
-        </form>
+              <label>
+                Kids?
+                <select value={goodWithKids} onChange={onGoodWithKidsChange}>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </label>
+              <label>
+                Cats?
+                <select value={goodWithDogs} onChange={onGoodWithDogsChange}>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </label>
+              <label>
+                Dogs?
+                <select value={goodWithCats} onChange={onGoodWithCatsChange}>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </label>
+            </div>
+
+            <button type="submit">Find Pet</button>
+          </form>
+        </div>
+
+        <PetList pets={updatePets} />
       </div>
-
-      <PetList pets={updatePets} favourites={favourites} />
-    </div>
-  );
+    );
+  }
 };
 
 SearchPets.propTypes = {
