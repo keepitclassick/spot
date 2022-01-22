@@ -1,7 +1,8 @@
-import { React, useState } from "react";
+import { react, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./AdoptStyles.scss";
 import { Accordion } from "react-bootstrap";
+import PetList from "./PetList";
 
 export default function Pet({
   id,
@@ -41,6 +42,7 @@ export default function Pet({
     const newFavList = [...favourites, Pet];
     setFavourites(newFavList);
   };
+
   const img = media[0].medium;
   const description =
     tags.length > 2
@@ -83,63 +85,65 @@ affectionate, adventurous and loyal.`;
       : "🚫  No Special Needs";
 
   return (
-    <div className="pets__card" data-tesid="pets-comp">
-      <div className="pets__card-box">
-        <img src={img} alt="" />
-        <span id="name">
-          <h5>{name}</h5>
+    <>
+      <div className="pets__card" data-tesid="pets-comp">
+        <div className="pets__card-box">
+          <img src={img} alt="" />
+          <span id="name">
+            <h5>{name}</h5>
 
-          <button
-            id="favourite"
-            class="btn"
-            onClick={() => addFavouritePet(favPetDetails)}
-          >
-            <i class="fab fa-gratipay"></i>
-          </button>
-        </span>
-        <span>
-          <Accordion>
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>More about {name}</Accordion.Header>
-              <Accordion.Body>
-                <h3>{`🏡${contact.address.city}, ${contact.address.state}`}</h3>
-                <h4>{`${breeds} ${type}`}</h4>
-                <h5>{`${description}`}</h5>
-                <br />
-                <u>
-                  <b>Environment:</b>
-                </u>
-                <br />
-                {kids}
-                <br />
-                {cats}
-                <br />
-                {dogs}
-                <br />
-                <br />
-                <u>
-                  <b>Good to know:</b>
-                </u>
-                <br />
-                {houseTrained}
-                <br />
-                {shotsCurrent}
-                <br />
-                {spayedNeutered}
-                <br />
-                {specialNeeds}
-                <div class="map"></div>
-                <a
-                  href={`mailto:${contact.email}?subject=Potential%20Adoption&body=I%20would%20like%20to%20have%20more%20information%20about%20${name}.`}
-                >
-                  <button class="btn btn-dark">Email Shelter</button>
-                </a>
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-        </span>
+            <button
+              id="favourite"
+              class="btn"
+              onClick={() => addFavouritePet(favPetDetails)}
+            >
+              <i class="fab fa-gratipay"></i>
+            </button>
+          </span>
+          <span>
+            <Accordion>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>More about {name}</Accordion.Header>
+                <Accordion.Body>
+                  <h3>{`🏡${contact.address.city}, ${contact.address.state}`}</h3>
+                  <h4>{`${breeds} ${type}`}</h4>
+                  <h5>{`${description}`}</h5>
+                  <br />
+                  <u>
+                    <b>Environment:</b>
+                  </u>
+                  <br />
+                  {kids}
+                  <br />
+                  {cats}
+                  <br />
+                  {dogs}
+                  <br />
+                  <br />
+                  <u>
+                    <b>Good to know:</b>
+                  </u>
+                  <br />
+                  {houseTrained}
+                  <br />
+                  {shotsCurrent}
+                  <br />
+                  {spayedNeutered}
+                  <br />
+                  {specialNeeds}
+                  <div class="map"></div>
+                  <a
+                    href={`mailto:${contact.email}?subject=Potential%20Adoption&body=I%20would%20like%20to%20have%20more%20information%20about%20${name}.`}
+                  >
+                    <button class="btn btn-dark">Email Shelter</button>
+                  </a>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </span>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 Pet.propTypes = {

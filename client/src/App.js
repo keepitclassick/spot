@@ -12,7 +12,6 @@ import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import Home from "./Components/Home";
 
-
 function App() {
   return (
     <div className="page-container">

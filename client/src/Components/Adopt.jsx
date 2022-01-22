@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import petFinder from "./helpers/petFinderAPI";
 import PropTypes from "prop-types";
 import { ANIMALS } from "@frontendmasters/pet";
@@ -40,6 +40,7 @@ const SearchPets = ({
   const [goodWithKids, setGoodWithKids] = useState("true");
   const [goodWithDogs, setGoodWithDogs] = useState("true");
   const [goodWithCats, setGoodWithCats] = useState("false");
+  const [favourites, setFavourites] = useState([]);
 
   const sizes = ["Small", "Medium", "Large"];
   const genders = ["Male", "Female"];
@@ -285,7 +286,7 @@ const SearchPets = ({
         </form>
       </div>
 
-      <PetList pets={updatePets} />
+      <PetList pets={updatePets} favourites={favourites} />
     </div>
   );
 };

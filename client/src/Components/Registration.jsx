@@ -11,7 +11,7 @@ export default function Registration() {
   const [password, setPassword] = useState("");
 
   const register = () => {
-    Axios.post("http://localhost:3001/api/users", {
+    Axios.post("localhost:3001/api/users", {
       name: usersName,
       email: email,
       phone_number: cell,
