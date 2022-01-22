@@ -1,5 +1,5 @@
 import "./Home.scss"
-import CarouselContainer from "./CarouselContainer";
+import CarouselContainer from "./CarouselContainer"; 
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
     {/* Slogan */}
     <section class="colored-section" id="cta">
     <div class="row">
-    <h1 class="big-heading">See Spot. Adopt Spot. Love Spot.</h1>
+    <h1 class="big-heading">See Spot. &nbsp;&nbsp;&nbsp;&nbsp;Adopt Spot. &nbsp;&nbsp;&nbsp;&nbsp;Love Spot.</h1>
         </div> 
        
 
