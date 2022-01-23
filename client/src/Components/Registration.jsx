@@ -17,9 +17,15 @@ export default function Registration() {
       phone_number: cell,
       password: password,
       location: location,
-    }).then((res) => {
-      console.log(res);
-    });
+    })
+      .then((res) => {
+        const user = JSON.stringify(res.data);
+        localStorage.setItem("userID", user);
+        window.location.href = "/adopt";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div id="background">
