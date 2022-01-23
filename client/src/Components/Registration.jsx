@@ -17,14 +17,9 @@ export default function Registration() {
       phone_number: cell,
       password: password,
       location: location,
-    })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-        window.alert("Please fill all fields.");
-      });
+    }).then((res) => {
+      console.log(res);
+    });
   };
   return (
     <div id="background">

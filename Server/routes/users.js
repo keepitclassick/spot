@@ -55,5 +55,17 @@ module.exports = ({ getUsers, getUserByEmail, addUser }) => {
       );
   });
 
+  router.post("/", (req, res) => {
+    addUserFavourite(favourited_pets, user_id)
+      .then((res) => {
+        res.json(res);
+      })
+      .catch((err) =>
+        res.json({
+          error: err.message,
+        })
+      );
+  });
+
   return router;
 };
