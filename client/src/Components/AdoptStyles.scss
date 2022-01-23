@@ -139,8 +139,12 @@ h4 {
 .accordion-body {
   text-align: left;
 }
-.favourite {
+#favourite {
   color: red;
+}
+
+#notfav {
+  color: black;
 }
 @media screen and (max-width: 990px) {
   .search__form__wrapper-form,

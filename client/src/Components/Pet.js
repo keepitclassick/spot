@@ -43,23 +43,20 @@ export default function Pet({
   const addFavouritePet = (Pet) => {
     const newFavList = [...favourites, Pet];
     setFavourites(newFavList);
-    setFavPet(true);
+    setFavPet(Pet);
 
-    const user = JSON.parse(localStorage.getItem("userID"));
-    const pet = JSON.parse(localStorage.getItem("Favourites"));
+    const user = localStorage.getItem("userID");
 
-    console.log(user.id, pet);
-
-    Axios.post("http://localhost:3001/api/users/", {
+    const data = {
+      favourited_pets: favPet,
       id: user.id,
-      email: user.email,
-      favourited_pets: pet,
-      location: user.location,
-      name: user.name,
-      password: user.password,
-      phone_number: user.phone_number,
-    }).then((res) => res.rows);
+    };
+
+    Axios.put("http://localhost:3001/api/users/", { data }).then((res) => {
+      alert("update made");
+    });
   };
+  if (!id) return "no user!";
 
   const img = media[0].medium;
   const description =
@@ -109,18 +106,20 @@ affectionate, adventurous and loyal.`;
           <img src={img} alt="" />
           <span id="name">
             <h5>{name}</h5>
+
             {favPet ? (
-              <div class="favourite">
-                <h1>favourite</h1>
-              </div>
-            ) : null}
-            <button
-              id="favourite"
-              class="btn"
-              onClick={() => addFavouritePet(favPetDetails)}
-            >
-              <i class="fab fa-gratipay"></i>
-            </button>
+              <button id="notfav" class="btn" onClick={() => setFavPet(false)}>
+                <i class="fab fa-gratipay"></i>
+              </button>
+            ) : (
+              <button
+                id="favourite"
+                class="btn"
+                onClick={() => addFavouritePet(favPetDetails)}
+              >
+                <i class="fab fa-gratipay"></i>
+              </button>
+            )}
           </span>
           <span>
             <Accordion>
