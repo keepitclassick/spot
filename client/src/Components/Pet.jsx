@@ -50,7 +50,6 @@ export default function Pet({
 
     const user = JSON.parse(localStorage.getItem("userID"));
     const pet = JSON.parse(localStorage.getItem("Favourites"));
-    const shelter = pet.organization_id;
     const userId = user.id;
 
     for (let fav of favourites) {
