@@ -85,6 +85,16 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
+  const findFavouritesForUser = (id) => {
+    const query = {
+      text: `SELECT * FROM users_favourites WHERE users_id = '$1';`,
+    };
+    return db
+      .query(query)
+      .then((result) => result.rows)
+      .catch((err) => err);
+  };
+
   return {
     getUsers,
     getUserByEmail,
@@ -93,5 +103,6 @@ module.exports = (db) => {
     findUsersFavourites,
     addUserFavourite,
     findUserByID,
+    findFavouritesForUser,
   };
 };
