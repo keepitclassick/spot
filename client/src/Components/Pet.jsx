@@ -23,7 +23,7 @@ export default function Pet({
   favourites,
   organization_id,
 }) {
-  const [favPet, setFavPet] = useState(false);
+  const [favPet, setFavPet] = useState("");
 
   const favPetDetails = {
     id,
@@ -42,25 +42,30 @@ export default function Pet({
     attributes,
     organization_id,
   };
+
   const addFavouritePet = (Pet) => {
     const newFavList = [...favourites, Pet];
     setFavourites(newFavList);
     setFavPet(Pet);
 
-    const user = localStorage.getItem("userID");
-    const pet = localStorage.getItem("Favourites");
+    const user = JSON.parse(localStorage.getItem("userID"));
+    const pet = JSON.parse(localStorage.getItem("Favourites"));
+    const shelter = pet.organization_id;
+    const userId = user.id;
 
-    Axios.post("http://localhost:3001/api/favourites", {
-      pets_id: pet.id,
-      users_id: user.id,
-      shelters_id: pet.organization_id,
-    })
-      .then((res) => {
-        console.log(res);
+    for (let fav of favourites) {
+      Axios.post("http://localhost:3001/api/favourites", {
+        pets_id: fav.id,
+        users_id: userId,
+        shelters_id: fav.organization_id,
       })
-      .catch((err) => console.log(err));
+        .then((res) => {
+          console.log(res);
+          localStorage.removeItem("Favourites");
+        })
+        .catch((err) => console.log(err));
+    }
   };
-
   const img = media[0].medium;
   const description =
     tags.length > 2
