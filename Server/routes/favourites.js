@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-module.exports = ({ getUsersFavourites, addUserFavourite }) => {
+module.exports = ({ findUsersFavourites, addUserFavourite, findUserByID }) => {
   router.get("/", (req, res) => {
-    getUsersFavourites()
+    findUsersFavourites()
       .then((usersFavourites) => {
         res.json(usersFavourites);
       })
@@ -15,16 +15,12 @@ module.exports = ({ getUsersFavourites, addUserFavourite }) => {
   });
 
   router.post("/", (req, res) => {
-    const { users_id, pets_id } = req.body;
-    addUserFavourite(users_id, pets_id)
+    const { users_id, pets_id, shelters_id } = req.body;
+    findUserByID(users_id)
       .then((res) => {
-        res.send(res);
+        return addUserFavourite(users_id, pets_id, shelters_id);
       })
-      .catch((err) =>
-        res.json({
-          error: err.message,
-        })
-      );
+      .then((newFav) => res.json(newFav));
   });
   return router;
 };

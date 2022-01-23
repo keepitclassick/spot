@@ -22,6 +22,17 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
+  const findUserByID = (id) => {
+    const query = {
+      text: `SELECT * FROM users WHERE id = $1`,
+      values: [id],
+    };
+    return db
+      .query(query)
+      .then((result) => result.rows[0])
+      .catch((err) => err);
+  };
+
   const addUser = (
     name,
     email,
@@ -53,7 +64,7 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
-  const getUsersFavourites = function () {
+  const findUsersFavourites = function () {
     const query = {
       text: `SELECT * FROM users_favourites`,
     };
@@ -63,12 +74,11 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
-  const addUserFavourite = (users_id, pets_id) => {
+  const addUserFavourite = (users_id, pets_id, shelters_id) => {
     const query = {
-      text: `INSERT INTO users_favourites (favourited_pets, id) VALUES ($1, $2) RETURNING *`,
-      values: [users_id, pets_id],
+      text: `INSERT INTO users_favourites (users_id, shelters_id, pets_id) VALUES ($1, $2, $3) RETURNING *;`,
+      values: [users_id, shelters_id, pets_id],
     };
-
     return db
       .query(query)
       .then((result) => result.rows[0])
@@ -80,7 +90,8 @@ module.exports = (db) => {
     getUserByEmail,
     addUser,
     getShelterByEmail,
-    getUsersFavourites,
+    findUsersFavourites,
     addUserFavourite,
+    findUserByID,
   };
 };
