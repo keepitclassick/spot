@@ -21,6 +21,7 @@ export default function Pet({
   attributes,
   setFavourites,
   favourites,
+  organization_id,
 }) {
   const [favPet, setFavPet] = useState(false);
 
@@ -39,6 +40,7 @@ export default function Pet({
     contact,
     environment,
     attributes,
+    organization_id,
   };
   const addFavouritePet = (Pet) => {
     const newFavList = [...favourites, Pet];
@@ -46,17 +48,18 @@ export default function Pet({
     setFavPet(Pet);
 
     const user = localStorage.getItem("userID");
+    const pet = localStorage.getItem("Favourites");
 
-    const data = {
-      favourited_pets: favPet,
-      id: user.id,
-    };
-
-    Axios.put("http://localhost:3001/api/users/", { data }).then((res) => {
-      alert("update made");
-    });
+    Axios.post("http://localhost:3001/api/favourites", {
+      pets_id: pet.id,
+      users_id: user.id,
+      shelters_id: pet.organization_id,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   };
-  if (!id) return "no user!";
 
   const img = media[0].medium;
   const description =
@@ -106,25 +109,30 @@ affectionate, adventurous and loyal.`;
           <img src={img} alt="" />
           <span id="name">
             <h5>{name}</h5>
-
             {favPet ? (
-              <button id="notfav" class="btn" onClick={() => setFavPet(false)}>
-                <i class="fab fa-gratipay"></i>
-              </button>
-            ) : (
               <button
                 id="favourite"
                 class="btn"
+                onClick={() => setFavPet(false)}
+              >
+                <i class="fas fa-heart"></i>
+              </button>
+            ) : (
+              <button
+                id="not-favourite"
+                class="btn"
                 onClick={() => addFavouritePet(favPetDetails)}
               >
-                <i class="fab fa-gratipay"></i>
+                <i class="far fa-heart"></i>
               </button>
             )}
           </span>
           <span>
             <Accordion>
               <Accordion.Item eventKey="0">
-                <Accordion.Header>More about {name}</Accordion.Header>
+                <Accordion.Header>
+                  <h6>More about {name}</h6>
+                </Accordion.Header>
                 <Accordion.Body>
                   <h3>{`🏡${contact.address.city}, ${contact.address.state}`}</h3>
                   <h4>{`${breeds} ${type}`}</h4>
@@ -176,7 +184,7 @@ Pet.propTypes = {
 Pet.defaultProps = {
   name: "",
   media: [],
-  id: null,
+  id: "",
   age: "",
   description: "",
   location: "",

@@ -136,16 +136,18 @@ h3,
 h4 {
   text-align: center;
 }
+
+h6 {
+  color: rgb(255, 152, 35);
+}
 .accordion-body {
   text-align: left;
 }
 #favourite {
-  color: red;
+  color: orange;
+  size: 1.5em;
 }
 
-#notfav {
-  color: black;
-}
 @media screen and (max-width: 990px) {
   .search__form__wrapper-form,
   .search__form__wrapper-form-box {
