@@ -34,6 +34,7 @@ const PetsList = ({ pets }) => {
               attributes={pet.attributes}
               favourites={favourites}
               setFavourites={setFavourites}
+              organization_id={pet.organization_id}
             />
           ))
         )}

@@ -15,7 +15,7 @@ export default function Navigation() {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand id="logo" href="#home">
+      <Navbar.Brand id="logo" href="/">
         <img
           alt=""
           src="./images/0D7BF294-2098-47E2-AE71-CCE624CCE1AC_4_5005_c.jpeg"

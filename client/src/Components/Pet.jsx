@@ -21,8 +21,9 @@ export default function Pet({
   attributes,
   setFavourites,
   favourites,
+  organization_id,
 }) {
-  const [favPet, setFavPet] = useState(false);
+  const [favPet, setFavPet] = useState("");
 
   const favPetDetails = {
     id,
@@ -39,24 +40,31 @@ export default function Pet({
     contact,
     environment,
     attributes,
+    organization_id,
   };
+
   const addFavouritePet = (Pet) => {
     const newFavList = [...favourites, Pet];
     setFavourites(newFavList);
-    setFavPet(true);
+    setFavPet(Pet);
 
     const user = JSON.parse(localStorage.getItem("userID"));
     const pet = JSON.parse(localStorage.getItem("Favourites"));
+    const userId = user.id;
 
-    console.log(user.id, pet);
-    Axios.post("http://localhost:3001/api/users", {
-      users_id: user.id,
-      pets_id: pet,
-    }).then((res) => {
-      console.log(res);
-    });
+    for (let fav of favourites) {
+      Axios.post("http://localhost:3001/api/favourites", {
+        pets_id: fav.id,
+        users_id: userId,
+        shelters_id: fav.organization_id,
+      })
+        .then((res) => {
+          console.log(res);
+          localStorage.removeItem("Favourites");
+        })
+        .catch((err) => console.log(err));
+    }
   };
-
   const img = media[0].medium;
   const description =
     tags.length > 2
@@ -106,22 +114,29 @@ affectionate, adventurous and loyal.`;
           <span id="name">
             <h5>{name}</h5>
             {favPet ? (
-              <div class="favourite">
-                <h1>favourite</h1>
-              </div>
-            ) : null}
-            <button
-              id="favourite"
-              class="btn"
-              onClick={() => addFavouritePet(favPetDetails)}
-            >
-              <i class="fab fa-gratipay"></i>
-            </button>
+              <button
+                id="favourite"
+                class="btn"
+                onClick={() => setFavPet(false)}
+              >
+                <i class="fas fa-heart"></i>
+              </button>
+            ) : (
+              <button
+                id="not-favourite"
+                class="btn"
+                onClick={() => addFavouritePet(favPetDetails)}
+              >
+                <i class="far fa-heart"></i>
+              </button>
+            )}
           </span>
           <span>
             <Accordion>
               <Accordion.Item eventKey="0">
-                <Accordion.Header>More about {name}</Accordion.Header>
+                <Accordion.Header>
+                  <h6>More about {name}</h6>
+                </Accordion.Header>
                 <Accordion.Body>
                   <h3>{`🏡${contact.address.city}, ${contact.address.state}`}</h3>
                   <h4>{`${breeds} ${type}`}</h4>
@@ -173,7 +188,7 @@ Pet.propTypes = {
 Pet.defaultProps = {
   name: "",
   media: [],
-  id: null,
+  id: "",
   age: "",
   description: "",
   location: "",

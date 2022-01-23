@@ -4,38 +4,14 @@ import PropTypes from "prop-types";
 import { ANIMALS } from "@frontendmasters/pet";
 import PetList from "./PetList";
 import "./AdoptStyles.scss";
-import { Spinner } from "react-bootstrap";
 
-const SearchPets = ({
-  pets = [],
-
-  filterPets,
-  filter,
-  filterSize,
-  size,
-  gender,
-  filterGender,
-  limit,
-  filterLimit,
-  location,
-  filterLocation,
-  distance,
-  filterDistance,
-  sortType,
-  filterSort,
-  goodWithChildren,
-  filterGoodWithChildren,
-  goodWithDog,
-  filterGoodWithDog,
-  goodWithCat,
-  filterGoodWithCat,
-}) => {
-  const [petSize, setPetSize] = useState(size);
-  const [petFilter, setPetFilter] = useState(filter);
+const SearchPets = ({ pets = [], gender, sortType }) => {
+  const [petSize, setPetSize] = useState("large");
+  const [petFilter, setPetFilter] = useState("dog");
   const [petGender, setPetGender] = useState(gender || "female");
   const [updatePets, setUpdatePets] = useState(pets || []);
-  const [petLimit, setPetLimit] = useState(limit || "20");
-  const [petLocation, setPetLocation] = useState(location || "n7l 4j3");
+  const [petLimit, setPetLimit] = useState("20");
+  const [petLocation, setPetLocation] = useState("n7l 4j3");
   const [petDistance, setDistance] = useState("100");
   const [sort, setSort] = useState(sortType || "distance");
   const [goodWithKids, setGoodWithKids] = useState("true");
@@ -84,17 +60,6 @@ const SearchPets = ({
       .catch((error) => error);
 
     setUpdatePets(animals);
-
-    filterPets(petFilter);
-    filterSize(petSize);
-    filterGender(petGender);
-    filterLimit(limit);
-    filterLocation(location);
-    filterDistance(distance);
-    filterSort(sortType);
-    filterGoodWithChildren(goodWithChildren);
-    filterGoodWithDog(goodWithDog);
-    filterGoodWithCat(goodWithCat);
   }
 
   const onFilterChange = (e) => {
@@ -165,7 +130,6 @@ const SearchPets = ({
     localStorage.setItem("Favourites", JSON.stringify([...favourites]));
   }, [favourites]);
 
-  const favs = JSON.parse(localStorage.getItem("favorites"));
   {
     return (
       <div className="main__wrapper" data-testid="search-pets-id">
@@ -314,10 +278,6 @@ SearchPets.propTypes = {
 SearchPets.defaultProps = {
   pets: [],
   fetchPets: null,
-  filter: "All",
-  filterPets: null,
-  filterSize: null,
-  filterGender: null,
   size: "All",
   gender: "All",
 };
