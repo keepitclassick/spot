@@ -53,10 +53,20 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
-  const addUserFavourite = (favourited_pets, user_id) => {
+  const getUsersFavourites = function () {
     const query = {
-      text: `UPDATE users SET favourited_pets=$1 WHERE id=$2;`,
-      values: [favourited_pets, user_id],
+      text: `SELECT * FROM users_favourites`,
+    };
+    return db
+      .query(query)
+      .then((result) => result.rows[0])
+      .catch((err) => err);
+  };
+
+  const addUserFavourite = (users_id, pets_id) => {
+    const query = {
+      text: `INSERT INTO users_favourites (favourited_pets, id) VALUES ($1, $2) RETURNING *`,
+      values: [users_id, pets_id],
     };
 
     return db
@@ -70,6 +80,7 @@ module.exports = (db) => {
     getUserByEmail,
     addUser,
     getShelterByEmail,
+    getUsersFavourites,
     addUserFavourite,
   };
 };
