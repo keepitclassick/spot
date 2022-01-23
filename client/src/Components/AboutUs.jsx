@@ -2,7 +2,7 @@ import "./About.scss";
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
 export default function AboutUs() {
   return (
-    <body>
+    <>
       <div class="about">
         <div class="inner">
           <h1>About Us</h1>
@@ -13,7 +13,6 @@ export default function AboutUs() {
           </p>
         </div>
       </div>
-
       <div className="questions">
         <Container>
           <Col>FAQ's</Col>
@@ -56,6 +55,6 @@ export default function AboutUs() {
           </Accordion>
         </Container>
       </div>
-    </body>
+    </>
   );
 }
