@@ -49,12 +49,16 @@ export default function Pet({
     const pet = JSON.parse(localStorage.getItem("Favourites"));
 
     console.log(user.id, pet);
-    Axios.post("http://localhost:3001/api/users", {
-      users_id: user.id,
-      pets_id: pet,
-    }).then((res) => {
-      console.log(res);
-    });
+
+    Axios.post("http://localhost:3001/api/users/", {
+      id: user.id,
+      email: user.email,
+      favourited_pets: pet,
+      location: user.location,
+      name: user.name,
+      password: user.password,
+      phone_number: user.phone_number,
+    }).then((res) => res.rows);
   };
 
   const img = media[0].medium;
