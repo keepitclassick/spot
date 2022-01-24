@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import Pet from "./Pet";
 import { React, useState, useEffect } from "react";
+import Favourites from "./Favourites";
+
+const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
 
 const PetsList = ({ pets }) => {
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useState(petsFromLocalStorage || []);
 
   useEffect(() => {
     localStorage.setItem("Favourites", JSON.stringify(favourites));

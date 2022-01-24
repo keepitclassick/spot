@@ -11,7 +11,7 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
   const [petSize, setPetSize] = useState("large");
   const [petFilter, setPetFilter] = useState("dog");
   const [petGender, setPetGender] = useState(gender || "female");
-  const [updatePets, setUpdatePets] = useState(pets || []);
+  const [updatePets, setUpdatePets] = useState([]);
   const [petLimit, setPetLimit] = useState("20");
   const [petLocation, setPetLocation] = useState("n7l 4j3");
   const [petDistance, setDistance] = useState("100");
