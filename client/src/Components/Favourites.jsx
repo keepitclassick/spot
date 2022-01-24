@@ -2,7 +2,8 @@ import { Accordion } from "react-bootstrap";
 const axios = require("axios");
 
 export default function Favourites() {
-  let petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
+  let petsFromLocalStorage =
+    JSON.parse(localStorage.getItem("Favourites")) || [];
 
   return (
     <div className="pet">

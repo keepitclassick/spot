@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import "./Registration.scss";
 import Axios from "axios";
-import bcrypt from "bcryptjs";
 
 export default function Registration() {
   const [usersName, setName] = useState("");
@@ -93,9 +92,7 @@ export default function Registration() {
             type="password"
             placeholder="Password"
             onChange={(e) => {
-              setPassword(
-                bcrypt.hashSync(e.target.value, bcrypt.genSaltSync(10))
-              );
+              setPassword(e.target.value);
             }}
           />
         </Form.Group>
