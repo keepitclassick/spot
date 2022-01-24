@@ -74,10 +74,10 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
-  const addUserFavourite = (users_id, pets_id, shelters_id) => {
+  const addUserFavourite = (users_id, pets_id, shelters_id, pet_details) => {
     const query = {
-      text: `INSERT INTO users_favourites (users_id, shelters_id, pets_id) VALUES ($1, $2, $3) RETURNING *;`,
-      values: [users_id, shelters_id, pets_id],
+      text: `INSERT INTO users_favourites (users_id, shelters_id, pets_id, pet_details) VALUES ($1, $2, $3, $4) RETURNING *;`,
+      values: [users_id, shelters_id, pets_id, pet_details],
     };
     return db
       .query(query)
@@ -88,6 +88,7 @@ module.exports = (db) => {
   const findFavouritesForUser = (id) => {
     const query = {
       text: `SELECT * FROM users_favourites WHERE users_id = '$1';`,
+      values: [id],
     };
     return db
       .query(query)
