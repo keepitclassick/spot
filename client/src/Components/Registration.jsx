@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import "./Registration.scss";
 import Axios from "axios";
+import bcrypt from "bcryptjs";
 
 export default function Registration() {
   const [usersName, setName] = useState("");
@@ -10,7 +11,7 @@ export default function Registration() {
   const [cell, setCell] = useState("");
   const [password, setPassword] = useState("");
 
-  const register = () => {
+  const register = (e) => {
     Axios.post("http://localhost:3001/api/users", {
       name: usersName,
       email: email,
@@ -34,6 +35,7 @@ export default function Registration() {
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control
+            required
             class="reg"
             id="email"
             type="text"
@@ -46,6 +48,7 @@ export default function Registration() {
         <Form.Group className="mb-3">
           <Form.Label>Email address</Form.Label>
           <Form.Control
+            required
             class="reg"
             type="email"
             placeholder="Enter email"
@@ -53,6 +56,7 @@ export default function Registration() {
               setEmail(e.target.value);
             }}
           />
+
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -60,6 +64,7 @@ export default function Registration() {
         <Form.Group className="mb-3">
           <Form.Label>Location</Form.Label>
           <Form.Control
+            required
             class="reg"
             type="text"
             placeholder="Enter location"
@@ -71,6 +76,7 @@ export default function Registration() {
         <Form.Group className="mb-3">
           <Form.Label>Cell Phone</Form.Label>
           <Form.Control
+            required
             class="reg"
             type="text"
             placeholder="Enter phone number"
@@ -82,11 +88,14 @@ export default function Registration() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
+            required
             class="reg"
             type="password"
             placeholder="Password"
             onChange={(e) => {
-              setPassword(e.target.value);
+              setPassword(
+                bcrypt.hashSync(e.target.value, bcrypt.genSaltSync(10))
+              );
             }}
           />
         </Form.Group>
