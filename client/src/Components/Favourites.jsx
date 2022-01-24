@@ -7,13 +7,7 @@ const axios = require("axios");
 export default function Favourites() {
 
 const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
-// const [favourites, setFavourites] = useState([])
 
-// useEffect(() => {
-//   const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
-//     setFavourites([...petsFromLocalStorage])
-  
-// })
   for (let pet of petsFromLocalStorage) {
     const img = pet.media[0].small;
     const description =

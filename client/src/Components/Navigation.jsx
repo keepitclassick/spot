@@ -2,9 +2,6 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 
 import React, { useEffect, useState } from "react";
 export default function Navigation() {
-  //useEffect check localstorage for userID
-  //conditionally render login/register
-  //{userID ? logout: register}
 
   const [loggedIn, setLoggedIn] = useState(false);
 
