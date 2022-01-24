@@ -57,10 +57,10 @@ export default function Pet({
         pets_id: fav.id,
         users_id: userId,
         shelters_id: fav.organization_id,
+        pet_details: pet,
       })
         .then((res) => {
           console.log(res);
-          localStorage.removeItem("Favourites");
         })
         .catch((err) => console.log(err));
     }

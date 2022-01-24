@@ -1,9 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import petFinder from "./helpers/petFinderAPI";
 import PropTypes from "prop-types";
 import { ANIMALS } from "@frontendmasters/pet";
 import PetList from "./PetList";
 import "./AdoptStyles.scss";
+
+const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
 
 const SearchPets = ({ pets = [], gender, sortType }) => {
   const [petSize, setPetSize] = useState("large");
@@ -17,7 +19,7 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
   const [goodWithKids, setGoodWithKids] = useState("true");
   const [goodWithDogs, setGoodWithDogs] = useState("true");
   const [goodWithCats, setGoodWithCats] = useState("false");
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useState(petsFromLocalStorage);
 
   const sizes = ["Small", "Medium", "Large"];
   const genders = ["Male", "Female"];
@@ -127,7 +129,7 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("Favourites", JSON.stringify([...favourites]));
+    localStorage.setItem("Favourites", JSON.stringify(favourites));
   }, [favourites]);
 
   {

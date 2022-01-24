@@ -11,6 +11,7 @@ import Registration from "./Components/Registration";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import Home from "./Components/Home";
+import Favourites from "./Components/Favourites";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/register" element={<Registration />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/favourites" element={<Favourites />} />
         </Routes>
       </div>
       <Footer />

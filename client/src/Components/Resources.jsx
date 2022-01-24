@@ -18,9 +18,8 @@ export default function Resources() {
                 height="300px"
               />
               <div class="card-body">
-                <h5 class="card-title">Socializing Cats</h5>
                 <p class="card-text">
-                  Some tips on socializing your shy or fearful cats.
+                  Shy or fearful cat? Here are some tips to help socialize them.
                 </p>
                 <a
                   href="https://resources.bestfriends.org/article/how-socialize-very-shy-or-fearful-cats"
@@ -40,7 +39,6 @@ export default function Resources() {
                 height="300px"
               />
               <div class="card-body">
-                <h5 class="card-title">Spay/Neuter Your Dog</h5>
                 <p class="card-text">
                   Should you spay or neuter your dog? Learn more.
                 </p>
@@ -62,7 +60,6 @@ export default function Resources() {
                 height="300px"
               />
               <div class="card-body">
-                <h5 class="card-title">Should I adopt?</h5>
                 <p class="card-text">
                   Unsure about adopting? Here's some reassurance{" "}
                 </p>
@@ -111,7 +108,8 @@ export default function Resources() {
               />
               <div class="card-body">
                 <h5 class="card-title">
-                  How the covid pet adoption boom is reducing stress
+                  The covid pet adoption boom and how it's helping to reduce
+                  stress
                 </h5>
                 <p class="card-text"></p>
                 <a

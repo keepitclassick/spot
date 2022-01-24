@@ -7,7 +7,7 @@ const PetsList = ({ pets }) => {
 
   useEffect(() => {
     localStorage.setItem("Favourites", JSON.stringify(favourites));
-  }, []);
+  }, [favourites]);
   return (
     <div>
       <div className="pets__wrapper" data-testid="pets-list-id">
