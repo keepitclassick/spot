@@ -1,4 +1,3 @@
-import { useState, react } from "react";
 import { Accordion } from "react-bootstrap";
 const axios = require("axios");
 
@@ -68,7 +67,7 @@ export default function Favourites() {
                         <Accordion.Body>
                           <h3>{`🏡${petsFromLocalStorage[key].contact.address.city}, ${petsFromLocalStorage[key].contact.address.state}`}</h3>
                           <h4>{`${petsFromLocalStorage[key].breeds} ${petsFromLocalStorage[key].type}`}</h4>
-                          <h5>{`${petsFromLocalStorage[key].description}`}</h5>
+
                           <h5>{`${description}`}</h5>
                           <br />
                           <u>
