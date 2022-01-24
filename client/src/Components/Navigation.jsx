@@ -2,7 +2,6 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 
 import React, { useEffect, useState } from "react";
 export default function Navigation() {
-
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -42,11 +41,18 @@ export default function Navigation() {
         </Nav>
         <Nav>
           {loggedIn ? (
-            <Nav.Item>
-              <Nav.Link id="link" href="/Adopt">
-                Adopt
-              </Nav.Link>
-            </Nav.Item>
+            <>
+              <Nav.Item>
+                <Nav.Link id="link" href="/Adopt">
+                  Adopt
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link id="link" href="/Favourites">
+                  Favourites
+                </Nav.Link>
+              </Nav.Item>
+            </>
           ) : null}
           {loggedIn ? (
             <button id="link" onClick={() => localStorage.clear()}>
@@ -60,11 +66,13 @@ export default function Navigation() {
             </Nav.Item>
           )}
           {!loggedIn ? (
-            <Nav.Item>
-              <Nav.Link id="link" href="/Register">
-                Register
-              </Nav.Link>
-            </Nav.Item>
+            <>
+              <Nav.Item>
+                <Nav.Link id="link" href="/Register">
+                  Register
+                </Nav.Link>
+              </Nav.Item>
+            </>
           ) : null}
         </Nav>
       </Navbar.Collapse>
