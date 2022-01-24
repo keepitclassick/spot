@@ -1,11 +1,19 @@
-import useState from "react";
+import useState, { useEffect } from "react";
 import { Accordion } from "react-bootstrap";
 import PetList from "./PetList";
 const axios = require("axios");
 
-const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
 
 export default function Favourites() {
+
+const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
+// const [favourites, setFavourites] = useState([])
+
+// useEffect(() => {
+//   const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
+//     setFavourites([...petsFromLocalStorage])
+  
+// })
   for (let pet of petsFromLocalStorage) {
     const img = pet.media[0].small;
     const description =
