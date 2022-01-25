@@ -46,7 +46,7 @@ export default function Pet({
   const addFavouritePet = (Pet) => {
     const newFavList = [...favourites, Pet];
     setFavourites(newFavList);
-    setFavPet(Pet);
+    setFavPet(true);
 
     const user = JSON.parse(localStorage.getItem("userID"));
     const pet = JSON.parse(localStorage.getItem("Favourites"));
@@ -65,16 +65,15 @@ export default function Pet({
     }
   };
 
-  const deleteFav = (pet) => {
-    const favListToUpdate = JSON.parse(localStorage.getItem("Favourites"));
-    console.log(favListToUpdate);
+  function deleteFav(key) {
+    setFavPet(false);
+    let favList = JSON.parse(localStorage.getItem("Favourites"));
 
-    const index = favListToUpdate.indexOf(pet);
-    console.log(index);
-    favListToUpdate.splice(index, 1);
-    localStorage.setItem("Favourites", JSON.stringify(favListToUpdate));
-    setFavourites(favListToUpdate);
-  };
+    let updated = favList.filter((item) => item.id !== key);
+
+    localStorage.setItem("Favourites", JSON.stringify(updated));
+  }
+
   const img = media[0].medium;
   const description =
     tags.length > 2
@@ -124,7 +123,7 @@ affectionate, adventurous and loyal.`;
           <span id="name">
             <h5>{name}</h5>
             {favPet ? (
-              <button id="favourite" class="btn" onClick={() => deleteFav()}>
+              <button id="favourite" class="btn" onClick={() => deleteFav(id)}>
                 <i class="fas fa-heart"></i>
               </button>
             ) : (
