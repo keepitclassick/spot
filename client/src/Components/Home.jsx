@@ -1,7 +1,7 @@
 import "./Home.scss";
 import CarouselContainer from "./CarouselContainer";
 
-export default function Home () {
+export default function Home() {
   return (
     <>
       <CarouselContainer />
@@ -23,52 +23,26 @@ export default function Home () {
             <div class="card">
               <img
                 class="card-img-top"
-                src="./images/petexample1.jpeg"
-                height="fit-content"
+                src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/43172437/1/?bust=1641308988&width=720"
+                height="300px"
                 alt="black dog"
               />
-              <div class="card-body">
-                <h5 class="card-title">Sausage</h5>
-                <p class="card-text">
-                  Sausage is around 4 to 5 years old and 17 pounds. She is very
-                  social with people and other dogs. She is playful but not
-                  hyper.
-                </p>
-              </div>
-              <div class="card-footer text-center"></div>
             </div>
             <div class="card">
               <img
                 class="card-img-top"
-                src="./images/examplepet2.jpeg"
-                height="fit-content"
+                src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/54366189/2/?bust=1643077726&width=720"
+                height="300px"
                 alt="black and white cat"
               />
-              <div class="card-body">
-                <h5 class="card-title">Lester Sylvester</h5>
-                <p class="card-text">
-                  Sweet and intelligent, he is a responsive lad. When you are
-                  speaking to him, he will chat you back. Sylvester has
-                  personality!
-                </p>
-              </div>
-              <div class="card-footer text-center"></div>
             </div>
             <div class="card">
               <img
                 class="card-img-top"
-                src="./images/petexample3.jpeg"
-                height="fit-content"
+                src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/52079112/4/?bust=1630939380&width=720&height=300"
+                height="300px"
                 alt="orange cat"
               />
-              <div class="card-body">
-                <h5 class="card-title">Gingerbread</h5>
-                <p class="card-text">
-                  This playful boy loves plush toys and sparkly balls. He enjoys
-                  chasing his siblings and cuddling with his foster dad.
-                </p>
-              </div>
-              <div class="card-footer text-center"></div>
             </div>
           </div>
         </div>
