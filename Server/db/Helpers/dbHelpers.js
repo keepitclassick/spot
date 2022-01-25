@@ -76,8 +76,8 @@ module.exports = (db) => {
 
   const addUserFavourite = (users_id, pets_id, shelters_id, pet_details) => {
     const query = {
-      text: `INSERT INTO users_favourites (users_id, shelters_id, pets_id, pet_details) VALUES ($1, $2, $3, $4) RETURNING *;`,
-      values: [users_id, shelters_id, pets_id, pet_details],
+      text: `INSERT INTO users_favourites (users_id, shelters_id, pets_id) VALUES ($1, $2, $3) RETURNING *;`,
+      values: [users_id, shelters_id, pets_id],
     };
     return db
       .query(query)
