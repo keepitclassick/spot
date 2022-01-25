@@ -47,16 +47,16 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
   async function petsRequest() {
     const { animals } = await petFinder.animal
       .search({
-        type: petFilter || null,
-        gender: petGender || null,
-        size: petSize || null,
-        limit: petLimit || null,
-        location: petLocation || null,
-        distance: petDistance || null,
-        sort: sort || null,
-        good_with_children: goodWithKids || null,
-        good_with_cats: goodWithDogs || null,
-        good_with_dogs: goodWithCats || null,
+        type: petFilter,
+        gender: petGender,
+        size: petSize,
+        limit: petLimit,
+        location: petLocation,
+        distance: petDistance,
+        sort: sort,
+        good_with_children: goodWithKids,
+        good_with_cats: goodWithDogs,
+        good_with_dogs: goodWithCats,
       })
       .then((data) => data.data)
       .catch((error) => error);

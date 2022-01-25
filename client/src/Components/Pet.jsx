@@ -65,16 +65,16 @@ export default function Pet({
     }
   };
 
-  function deleteFav(key) {
-    let favList = JSON.parse(localStorage.getItem("Favourites"));
-    console.log(favList);
-    const index = favList.indexOf(key);
+  const deleteFav = (pet) => {
+    const favListToUpdate = JSON.parse(localStorage.getItem("Favourites"));
+    console.log(favListToUpdate);
+
+    const index = favListToUpdate.indexOf(pet);
     console.log(index);
-    favList.splice(index, 1);
-    localStorage.setItem("Favourites", JSON.stringify(favList));
-    setFavourites(favList);
-    setFavPet(false);
-  }
+    favListToUpdate.splice(index, 1);
+    localStorage.setItem("Favourites", JSON.stringify(favListToUpdate));
+    setFavourites(favListToUpdate);
+  };
   const img = media[0].medium;
   const description =
     tags.length > 2
