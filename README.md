@@ -11,7 +11,7 @@ Spot is a React/Express app which allows users to search for adoptable pets base
 !["Contact Shelter"]()
 
 ### Users can store pets as favourites
-!["Favourites Page"]()
+!["Favourites Page"](https://raw.githubusercontent.com/keepitclassick/spot/3d79249bf160cd716aff11e92ee092561e81bc5e/client/public/images/AdoptPets.gif)
 
 ### Users can contact Spot directly if they have any further questions
 !["Nodemailer Email Form"]()
