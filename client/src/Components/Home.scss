@@ -13,11 +13,11 @@
   line-height: 1.5;
 }
 
-.icon:hover{
+.icon:hover {
   color: #fcbf49;
 }
 
-.card{
+.card {
   margin-bottom: 10px;
 }
 
@@ -25,11 +25,11 @@ h3.big-heading {
   text-align: center;
 }
 h3.feature-title {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: 900;
 }
 
-.container-fluid{
+.container-fluid {
   padding: 7% 15%;
 }
 
@@ -41,7 +41,6 @@ h3.feature-title {
   font-size: 1.5rem;
 }
 
-
 p {
   font-size: 20px;
 }
@@ -51,5 +50,6 @@ p.card-text {
   color: black;
 }
 
-
-
+i {
+  align-self: center;
+}

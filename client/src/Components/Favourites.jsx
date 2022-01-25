@@ -1,9 +1,10 @@
 import { Accordion } from "react-bootstrap";
+import { useState } from "react";
 const axios = require("axios");
 
-export default function Favourites() {
+export default function Favourites(setFavourites) {
   let petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
-  if (!petsFromLocalStorage) {
+  if (!petsFromLocalStorage || petsFromLocalStorage === []) {
     return <h1>Go check out the adopt page to find your favourites!</h1>;
   } else {
     return (
@@ -52,6 +53,15 @@ export default function Favourites() {
                 ? "✅  Special Needs"
                 : "🚫  No Special Needs";
 
+            function deleteFav(key) {
+              let favList = JSON.parse(localStorage.getItem("Favourites"));
+
+              let updated = favList.filter((item) => item.id !== key);
+
+              localStorage.setItem("Favourites", JSON.stringify(updated));
+              window.location.reload();
+            }
+
             return (
               <>
                 <tr key={key}>
@@ -61,7 +71,13 @@ export default function Favourites() {
                       <span id="name">
                         <h5>{petsFromLocalStorage[key].name}</h5>
 
-                        <button id="favourite" class="btn">
+                        <button
+                          id="favourite"
+                          class="btn"
+                          onClick={() =>
+                            deleteFav(petsFromLocalStorage[key].id)
+                          }
+                        >
                           <i class="fas fa-heart"></i>
                         </button>
                       </span>

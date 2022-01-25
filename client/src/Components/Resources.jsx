@@ -4,10 +4,31 @@ import "./Resources.scss";
 export default function Resources() {
   return (
     <React.Fragment>
-      <div className="title">
-        <h1>Resources</h1>
-      </div>
+      <div className="title" />
+      <h1> Resources</h1>
+      <div class="card border-warning mb-3"></div>
       <div class="container">
+        <div className="col-sm">
+          <div class="card border-warning mb-3">
+            <img
+              class="card-img-top"
+              src="https://www.dogtime.com/assets/uploads/2018/02/dogs-for-adoption-1-720x407.jpg"
+              alt="German Shepherd with family"
+              height="400px"
+            />
+            <div class="card-body">
+              <p id="main-article" class="card-text">
+                Bringing Your Adopted Dog Home – The Critical First 7 Days
+              </p>
+              <a
+                href="https://resources.bestfriends.org/article/how-socialize-very-shy-or-fearful-cats"
+                class="btn btn-warning"
+              >
+                Check out this article
+              </a>
+            </div>
+          </div>
+        </div>
         <div className="row">
           <div className="col-sm">
             <div class="card border-warning mb-3">
@@ -72,79 +93,78 @@ export default function Resources() {
               </div>
             </div>
           </div>
+          <div className="row">
+            <div className="col-sm">
+              <div class="card border-warning mb-3">
+                <img
+                  class="card-img-top"
+                  src="https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+                  alt="A man hugging his dog"
+                  height="300px"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    10 Reasons Adopting a shelter dog is the best thing can do
+                  </h5>
+                  <p class="card-text"></p>
+                  <a
+                    href="https://www.dogtales.ca/10-reasons-why-adopting-a-dog-will-be-the-best-decision-youve-ever-made"
+                    class="btn btn-warning"
+                  >
+                    Check out this article
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm">
+              <div class="card border-warning mb-3">
+                <img
+                  class="card-img-top"
+                  src="https://images.unsplash.com/photo-1508675801627-066ac4346a61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1165&q=80"
+                  alt="a child hugging a puppy wih a bowtie"
+                  height="300px"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    The covid pet adoption boom and how it's helping to reduce
+                    stress
+                  </h5>
+                  <p class="card-text"></p>
+                  <a
+                    href="https://theconversation.com/how-the-coronavirus-pet-adoption-boom-is-reducing-stress-138074"
+                    class="btn btn-warning"
+                  >
+                    Check out this article
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm">
+              <div class="card border-warning mb-3">
+                <img
+                  class="card-img-top"
+                  src="https://images.unsplash.com/photo-1617691763432-8b45e6748b71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80"
+                  alt="A lizard"
+                  height="300px"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Considerations to make before adopting an exotic animal
+                  </h5>
+                  <p class="card-text"></p>
+                  <a
+                    href="https://www.canadianveterinarians.net/documents/recommendations-for-adopting-an-exotic-pet"
+                    class="btn btn-warning"
+                  >
+                    Check out this article
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="container">
-        <div className="row">
-          <div className="col-sm">
-            <div class="card border-warning mb-3">
-              <img
-                class="card-img-top"
-                src="https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-                alt="A man hugging his dog"
-                height="300px"
-              />
-              <div class="card-body">
-                <h5 class="card-title">
-                  10 Reasons Adopting a shelter dog is the best thing can do
-                </h5>
-                <p class="card-text"></p>
-                <a
-                  href="https://www.dogtales.ca/10-reasons-why-adopting-a-dog-will-be-the-best-decision-youve-ever-made"
-                  class="btn btn-warning"
-                >
-                  Check out this article
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm">
-            <div class="card border-warning mb-3">
-              <img
-                class="card-img-top"
-                src="https://images.unsplash.com/photo-1508675801627-066ac4346a61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1165&q=80"
-                alt="a child hugging a puppy wih a bowtie"
-                height="300px"
-              />
-              <div class="card-body">
-                <h5 class="card-title">
-                  The covid pet adoption boom and how it's helping to reduce
-                  stress
-                </h5>
-                <p class="card-text"></p>
-                <a
-                  href="https://theconversation.com/how-the-coronavirus-pet-adoption-boom-is-reducing-stress-138074"
-                  class="btn btn-warning"
-                >
-                  Check out this article
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm">
-            <div class="card border-warning mb-3">
-              <img
-                class="card-img-top"
-                src="https://images.unsplash.com/photo-1617691763432-8b45e6748b71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80"
-                alt="A lizard"
-                height="300px"
-              />
-              <div class="card-body">
-                <h5 class="card-title">
-                  Considerations to make before adopting an exotic animal
-                </h5>
-                <p class="card-text"></p>
-                <a
-                  href="https://www.canadianveterinarians.net/documents/recommendations-for-adopting-an-exotic-pet"
-                  class="btn btn-warning"
-                >
-                  Check out this article
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="container"></div>
     </React.Fragment>
   );
 }
