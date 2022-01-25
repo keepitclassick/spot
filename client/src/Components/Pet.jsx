@@ -57,7 +57,6 @@ export default function Pet({
         pets_id: fav.id,
         users_id: userId,
         shelters_id: fav.organization_id,
-        pet_details: pet,
       })
         .then((res) => {
           console.log(res);
@@ -65,6 +64,17 @@ export default function Pet({
         .catch((err) => console.log(err));
     }
   };
+
+  function deleteFav(key) {
+    let favList = JSON.parse(localStorage.getItem("Favourites"));
+    console.log(favList);
+    const index = favList.indexOf(key);
+    console.log(index);
+    favList.splice(index, 1);
+    localStorage.setItem("Favourites", JSON.stringify(favList));
+    setFavourites(favList);
+    setFavPet(false);
+  }
   const img = media[0].medium;
   const description =
     tags.length > 2
@@ -114,11 +124,7 @@ affectionate, adventurous and loyal.`;
           <span id="name">
             <h5>{name}</h5>
             {favPet ? (
-              <button
-                id="favourite"
-                class="btn"
-                onClick={() => setFavPet(false)}
-              >
+              <button id="favourite" class="btn" onClick={() => deleteFav()}>
                 <i class="fas fa-heart"></i>
               </button>
             ) : (

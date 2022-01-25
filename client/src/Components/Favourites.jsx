@@ -1,9 +1,10 @@
 import { Accordion } from "react-bootstrap";
+import { useState } from "react";
 const axios = require("axios");
 
-export default function Favourites() {
+export default function Favourites(setFavourites, favPet, setFavPet) {
   let petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
-  if (!petsFromLocalStorage) {
+  if (!petsFromLocalStorage || petsFromLocalStorage === []) {
     return <h1>Go check out the adopt page to find your favourites!</h1>;
   } else {
     return (
@@ -52,70 +53,96 @@ export default function Favourites() {
                 ? "✅  Special Needs"
                 : "🚫  No Special Needs";
 
+            function deleteFav(key) {
+              let favList = JSON.parse(localStorage.getItem("Favourites"));
+              console.log(favList);
+
+              const index = favList.indexOf(key);
+              console.log(index);
+              favList.splice(index, 1);
+
+              localStorage.setItem("Favourites", JSON.stringify(favList));
+              setFavourites(favList);
+              setFavPet(false);
+            }
+
             return (
               <>
-                <tr key={key}>
-                  <div className="pets__card" data-tesid="pets-comp">
-                    <div className="pets__card-box">
-                      <img src={img} alt="" />
-                      <span id="name">
-                        <h5>{petsFromLocalStorage[key].name}</h5>
+                {!favPet ? null : (
+                  <tr key={key}>
+                    <div className="pets__card" data-tesid="pets-comp">
+                      <div className="pets__card-box">
+                        <img src={img} alt="" />
+                        <span id="name">
+                          <h5>{petsFromLocalStorage[key].name}</h5>
+                          {favPet ? (
+                            <button
+                              id="favourite"
+                              class="btn"
+                              onClick={() =>
+                                deleteFav(petsFromLocalStorage[key].id)
+                              }
+                            >
+                              <i class="fas fa-heart"></i>
+                            </button>
+                          ) : (
+                            <button id="not-favourite" class="btn">
+                              <i class="far fa-heart"></i>
+                            </button>
+                          )}
+                        </span>
+                        <span>
+                          <Accordion>
+                            <Accordion.Item eventKey="0">
+                              <Accordion.Header>
+                                <h6>
+                                  More about {petsFromLocalStorage[key].name}
+                                </h6>
+                              </Accordion.Header>
+                              <Accordion.Body>
+                                <h3>{`🏡${petsFromLocalStorage[key].contact.address.city}, ${petsFromLocalStorage[key].contact.address.state}`}</h3>
+                                <h4>{`${petsFromLocalStorage[key].breeds} ${petsFromLocalStorage[key].type}`}</h4>
 
-                        <button id="favourite" class="btn">
-                          <i class="fas fa-heart"></i>
-                        </button>
-                      </span>
-                      <span>
-                        <Accordion>
-                          <Accordion.Item eventKey="0">
-                            <Accordion.Header>
-                              <h6>
-                                More about {petsFromLocalStorage[key].name}
-                              </h6>
-                            </Accordion.Header>
-                            <Accordion.Body>
-                              <h3>{`🏡${petsFromLocalStorage[key].contact.address.city}, ${petsFromLocalStorage[key].contact.address.state}`}</h3>
-                              <h4>{`${petsFromLocalStorage[key].breeds} ${petsFromLocalStorage[key].type}`}</h4>
-
-                              <h5>{`${description}`}</h5>
-                              <br />
-                              <u>
-                                <b>Environment:</b>
-                              </u>
-                              <br />
-                              {kids}
-                              <br />
-                              {cats}
-                              <br />
-                              {dogs}
-                              <br />
-                              <br />
-                              <u>
-                                <b>Good to know:</b>
-                              </u>
-                              <br />
-                              {houseTrained}
-                              <br />
-                              {shotsCurrent}
-                              <br />
-                              {spayedNeutered}
-                              <br />
-                              {specialNeeds}
-                              <div class="map"></div>
-                              <a
-                                href={`mailto:${petsFromLocalStorage[key].contact.email}?subject=Potential%20Adoption&body=I%20would%20like%20to%20have%20more%20information%20about%20${petsFromLocalStorage[key].name}.`}
-                              >
-                                <button class="btn btn-dark">
-                                  Email Shelter
-                                </button>
-                              </a>
-                            </Accordion.Body>
-                          </Accordion.Item>
-                        </Accordion>
-                      </span>
+                                <h5>{`${description}`}</h5>
+                                <br />
+                                <u>
+                                  <b>Environment:</b>
+                                </u>
+                                <br />
+                                {kids}
+                                <br />
+                                {cats}
+                                <br />
+                                {dogs}
+                                <br />
+                                <br />
+                                <u>
+                                  <b>Good to know:</b>
+                                </u>
+                                <br />
+                                {houseTrained}
+                                <br />
+                                {shotsCurrent}
+                                <br />
+                                {spayedNeutered}
+                                <br />
+                                {specialNeeds}
+                                <div class="map"></div>
+                                <a
+                                  href={`mailto:${petsFromLocalStorage[key].contact.email}?subject=Potential%20Adoption&body=I%20would%20like%20to%20have%20more%20information%20about%20${petsFromLocalStorage[key].name}.`}
+                                >
+                                  <button class="btn btn-dark">
+                                    Email Shelter
+                                  </button>
+                                </a>
+                              </Accordion.Body>
+                            </Accordion.Item>
+                          </Accordion>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </tr>
+                  </tr>
+                )}
               </>
             );
           })}

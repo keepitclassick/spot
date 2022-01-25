@@ -3,11 +3,17 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 export default function Navigation() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedOut, setLoggedOut] = useState(true);
 
   useEffect(() => {
     const getUserID = localStorage.getItem("userID");
     setLoggedIn(getUserID);
   }, []);
+
+  const logout = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -55,7 +61,7 @@ export default function Navigation() {
             </>
           ) : null}
           {loggedIn ? (
-            <button id="link" onClick={() => localStorage.clear()}>
+            <button id="link" onClick={logout}>
               Logout{" "}
             </button>
           ) : (
