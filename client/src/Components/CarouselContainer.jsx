@@ -31,6 +31,15 @@ function CarouselContainer() {
           height="650px"
         />
       </Carousel.Item>
+      <Carousel.Item interval={3000}>
+        <img
+          className="d-block w-100"
+          src={"./images/petfinder.png"}
+          alt="Third slide"
+          size="large"
+          height="650px"
+        />
+      </Carousel.Item>
     </Carousel>
   );
 }
