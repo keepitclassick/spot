@@ -4,7 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 function CarouselContainer() {
   return (
     <Carousel>
-      <Carousel.Item interval={1500}>
+      <Carousel.Item interval={3000}>
         <img
           className="d-block w-100"
           src={"./images/carouselItem1.jpg"}
@@ -13,7 +13,7 @@ function CarouselContainer() {
           height="650px"
         />
       </Carousel.Item>
-      <Carousel.Item interval={1500}>
+      <Carousel.Item interval={3000}>
         <img
           className="d-block w-100"
           src={"./images/carouselItem2.jpg"}
@@ -22,7 +22,7 @@ function CarouselContainer() {
           height="650px"
         />
       </Carousel.Item>
-      <Carousel.Item interval={1500}>
+      <Carousel.Item interval={3000}>
         <img
           className="d-block w-100"
           src={"./images/carouselItem3.jpg"}
