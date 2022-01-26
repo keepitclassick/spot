@@ -10,6 +10,7 @@ function CarouselContainer() {
           src={"./images/carouselItem1.jpg"}
           alt="First slide"
           size="large"
+          height="650px"
         />
       </Carousel.Item>
       <Carousel.Item interval={1500}>
@@ -18,6 +19,7 @@ function CarouselContainer() {
           src={"./images/carouselItem2.jpg"}
           alt="Second slide"
           size="large"
+          height="650px"
         />
       </Carousel.Item>
       <Carousel.Item interval={1500}>
@@ -26,6 +28,7 @@ function CarouselContainer() {
           src={"./images/carouselItem3.jpg"}
           alt="Third slide"
           size="large"
+          height="650px"
         />
       </Carousel.Item>
     </Carousel>

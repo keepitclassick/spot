@@ -148,7 +148,7 @@ h6 {
   size: 1.5em;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1400px) {
   .search__form__wrapper-form,
   .search__form__wrapper-form-box {
     display: flex;
@@ -168,8 +168,8 @@ h6 {
     box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
   }
   #adopt-header {
-    min-width: 70%;
-    min-height: 50%;
+    min-width: 50%;
+
     height: 250px;
   }
 }
@@ -189,6 +189,32 @@ h6 {
     width: 50%;
     margin-bottom: 15px;
     box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
+  }
+  #adopt-header {
+    max-width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .search__form__wrapper-form,
+  .search__form__wrapper-form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .search__form__wrapper-form {
+    padding: 10px;
+  }
+
+  .search__form__wrapper-form-box > label {
+    width: 50%;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 4px 1px rgb(255, 152, 35);
+  }
+  #adopt-header {
+    max-width: 30%;
+    height: 150px;
   }
 }
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Luckiest+Guy&family=Prompt:wght@300&display=swap");

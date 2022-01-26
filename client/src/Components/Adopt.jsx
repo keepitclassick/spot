@@ -142,128 +142,140 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
         <img
           id="adopt-header"
           src="https://i.ibb.co/cLf3RnK/e-Bay-Store-Billboard-1280x290-px.jpg"
-        />
-        <div id="search-form" className="search__form__wrapper">
-          <form
-            data-testid="search-pets-form"
-            className="search__form__wrapper-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              petsRequest();
-            }}
-          >
-            <div className="search__form__wrapper-form-box">
-              <label>
-                Location
-                <input
-                  class="form-control  form-control-sm"
-                  type="text"
-                  placeholder="Postal Code"
-                  value={petLocation}
-                  onChange={onLocationChange}
-                />
-              </label>
+        />{" "}
+        <div class="row">
+          <div class="column">
+            <div id="search-form" className="search__form__wrapper">
+              <form
+                data-testid="search-pets-form"
+                className="search__form__wrapper-form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  petsRequest();
+                }}
+              >
+                <div className="search__form__wrapper-form-box">
+                  <label>
+                    Location
+                    <input
+                      class="form-control  form-control-sm"
+                      type="text"
+                      placeholder="Postal Code"
+                      value={petLocation}
+                      onChange={onLocationChange}
+                    />
+                  </label>
 
-              <label>
-                Animal
-                <select value={petFilter} onChange={onFilterChange}>
-                  <option>Select</option>
-                  {ANIMALS.map((option) => (
-                    <option value={option} key={option}>
-                      {capitalize(option)}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                Size
-                <select value={petSize} onChange={onSizeChange}>
-                  <option>Select</option>
-                  {sizes.map((option) => (
-                    <option value={option} key={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                  <label>
+                    Animal
+                    <select value={petFilter} onChange={onFilterChange}>
+                      <option>Select</option>
+                      {ANIMALS.map((option) => (
+                        <option value={option} key={option}>
+                          {capitalize(option)}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    Size
+                    <select value={petSize} onChange={onSizeChange}>
+                      <option>Select</option>
+                      {sizes.map((option) => (
+                        <option value={option} key={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
-              <label>
-                Gender
-                <select value={petGender} onChange={onGenderChange}>
-                  <option>Select</option>
+                  <label>
+                    Gender
+                    <select value={petGender} onChange={onGenderChange}>
+                      <option>Select</option>
 
-                  {genders.map((option) => (
-                    <option value={option} key={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                      {genders.map((option) => (
+                        <option value={option} key={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
-              <label>
-                Distance(miles)
-                <select value={petDistance} onChange={onDistanceChange}>
-                  <option>Select</option>
+                  <label>
+                    Distance(miles)
+                    <select value={petDistance} onChange={onDistanceChange}>
+                      <option>Select</option>
 
-                  {distanceList.map((option) => (
-                    <option value={option} key={option}>
-                      {capitalize(option)}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                      {distanceList.map((option) => (
+                        <option value={option} key={option}>
+                          {capitalize(option)}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
-              <label>
-                Sort By
-                <select value={sort} onChange={onSortChange}>
-                  <option>Select</option>
-                  {sortBy.map((option) => (
-                    <option value={option} key={option}>
-                      {capitalize(option)}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                  <label>
+                    Sort By
+                    <select value={sort} onChange={onSortChange}>
+                      <option>Select</option>
+                      {sortBy.map((option) => (
+                        <option value={option} key={option}>
+                          {capitalize(option)}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
-              <label>
-                Limit
-                <select value={petLimit} onChange={onLimitChange}>
-                  <option>Select</option>
-                  {limits.map((option) => (
-                    <option value={option} key={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                  <label>
+                    Limit
+                    <select value={petLimit} onChange={onLimitChange}>
+                      <option>Select</option>
+                      {limits.map((option) => (
+                        <option value={option} key={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
-              <label>
-                Kids?
-                <select value={goodWithKids} onChange={onGoodWithKidsChange}>
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-                </select>
-              </label>
-              <label>
-                Cats?
-                <select value={goodWithDogs} onChange={onGoodWithDogsChange}>
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-                </select>
-              </label>
-              <label>
-                Dogs?
-                <select value={goodWithCats} onChange={onGoodWithCatsChange}>
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-                </select>
-              </label>
+                  <label>
+                    Kids?
+                    <select
+                      value={goodWithKids}
+                      onChange={onGoodWithKidsChange}
+                    >
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+                  </label>
+                  <label>
+                    Cats?
+                    <select
+                      value={goodWithDogs}
+                      onChange={onGoodWithDogsChange}
+                    >
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+                  </label>
+                  <label>
+                    Dogs?
+                    <select
+                      value={goodWithCats}
+                      onChange={onGoodWithCatsChange}
+                    >
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+                  </label>
+                </div>
+
+                <button type="submit">Find Pet</button>
+              </form>
             </div>
-
-            <button type="submit">Find Pet</button>
-          </form>
+          </div>
         </div>
-
         <PetList pets={updatePets} loading={loading} />
       </div>
     );
