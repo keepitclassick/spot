@@ -63,8 +63,8 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
       .then((data) => data.data)
       .catch((error) => error);
 
-    setLoading(false);
     setUpdatePets(animals);
+    setLoading(false);
   }
 
   const onFilterChange = (e) => {

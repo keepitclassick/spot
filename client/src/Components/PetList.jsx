@@ -17,6 +17,7 @@ const PetsList = ({ pets, loading }) => {
         {loading ? (
           <>
             <h1 className="loading__wrapper">Spot is fetching... </h1>
+            <br />
             <img src="./images/image.gif" />
           </>
         ) : null}

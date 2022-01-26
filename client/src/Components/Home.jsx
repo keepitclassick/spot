@@ -24,7 +24,8 @@ export default function Home() {
               <img
                 class="card-img-top"
                 src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/43172437/1/?bust=1641308988&width=720"
-                height="300px"
+                height="500px"
+                width="300px"
                 alt="black dog"
               />
             </div>
@@ -32,7 +33,8 @@ export default function Home() {
               <img
                 class="card-img-top"
                 src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/54366189/2/?bust=1643077726&width=720"
-                height="300px"
+                height="500px"
+                width="300px"
                 alt="black and white cat"
               />
             </div>
@@ -40,7 +42,8 @@ export default function Home() {
               <img
                 class="card-img-top"
                 src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/52079112/4/?bust=1630939380&width=720&height=300"
-                height="300px"
+                height="500px"
+                width="300px"
                 alt="orange cat"
               />
             </div>
