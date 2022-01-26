@@ -22,6 +22,7 @@ export default function Pet({
   setFavourites,
   favourites,
   organization_id,
+  loading,
 }) {
   const [favPet, setFavPet] = useState("");
 
