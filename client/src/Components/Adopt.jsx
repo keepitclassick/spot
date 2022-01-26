@@ -13,13 +13,14 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
   const [petGender, setPetGender] = useState(gender || "female");
   const [updatePets, setUpdatePets] = useState([]);
   const [petLimit, setPetLimit] = useState("20");
-  const [petLocation, setPetLocation] = useState("n7l 4j3");
+  const [petLocation, setPetLocation] = useState("");
   const [petDistance, setDistance] = useState("100");
   const [sort, setSort] = useState(sortType || "distance");
   const [goodWithKids, setGoodWithKids] = useState("true");
   const [goodWithDogs, setGoodWithDogs] = useState("true");
   const [goodWithCats, setGoodWithCats] = useState("false");
   const [favourites, setFavourites] = useState(petsFromLocalStorage);
+  const [loading, setLoading] = useState(false);
 
   const sizes = ["Small", "Medium", "Large"];
   const genders = ["Male", "Female"];
@@ -58,9 +59,11 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
         good_with_cats: goodWithDogs,
         good_with_dogs: goodWithCats,
       })
+      .then(setLoading(true))
       .then((data) => data.data)
       .catch((error) => error);
 
+    setLoading(false);
     setUpdatePets(animals);
   }
 
@@ -123,6 +126,7 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
         limit: "",
         location: "",
       })
+
       .then((res) => res.data);
 
     setUpdatePets(animals);
@@ -260,7 +264,7 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
           </form>
         </div>
 
-        <PetList pets={updatePets} />
+        <PetList pets={updatePets} loading={loading} />
       </div>
     );
   }

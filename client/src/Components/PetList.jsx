@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import Pet from "./Pet";
 import { React, useState, useEffect } from "react";
-import Favourites from "./Favourites";
+import { Spinner } from "react-bootstrap";
 
 const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
 
-const PetsList = ({ pets }) => {
+const PetsList = ({ pets, loading }) => {
   const [favourites, setFavourites] = useState(petsFromLocalStorage || []);
 
   useEffect(() => {
@@ -14,7 +14,13 @@ const PetsList = ({ pets }) => {
   return (
     <div>
       <div className="pets__wrapper" data-testid="pets-list-id">
-        {pets.length === 0 ? (
+        {loading ? (
+          <>
+            <h1 className="loading__wrapper">Spot is fetching... </h1>
+            <img src="./images/image.gif" />
+          </>
+        ) : null}
+        {!loading && pets.length === 0 ? (
           <h1 className="loading__wrapper">No pets Found</h1>
         ) : (
           pets.map((pet) => (
