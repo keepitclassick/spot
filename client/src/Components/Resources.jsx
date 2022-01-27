@@ -14,7 +14,7 @@ export default function Resources() {
               class="card-img-top"
               src="https://www.dogtime.com/assets/uploads/2018/02/dogs-for-adoption-1-720x407.jpg"
               alt="German Shepherd with family"
-              height="400px"
+              height="500px"
             />
             <div class="card-body">
               <p id="main-article" class="card-text">

@@ -122,7 +122,7 @@ affectionate, adventurous and loyal.`;
         <div className="pets__card-box">
           <img src={img} alt="" />
           <span id="name">
-            <h5>{name}</h5>
+            <h5 id="petName">{name}</h5>
             {favPet ? (
               <button id="favourite" class="btn" onClick={() => deleteFav(id)}>
                 <i class="fas fa-heart"></i>
@@ -145,7 +145,7 @@ affectionate, adventurous and loyal.`;
                 </Accordion.Header>
                 <Accordion.Body>
                   <h3>{`🏡${contact.address.city}, ${contact.address.state}`}</h3>
-                  <h4>{`${breeds} ${type}`}</h4>
+                  <h4>{`${breeds}`}</h4>
                   <h5>{`${description}`}</h5>
                   <br />
                   <u>

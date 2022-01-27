@@ -4,7 +4,9 @@ import CarouselContainer from "./CarouselContainer";
 export default function Home() {
   return (
     <>
+      <div class="col-md"></div>
       <CarouselContainer />
+      <div class="col-md"></div>
       {/* Slogan */}
       <section class="colored-section" id="cta">
         <div class="row">

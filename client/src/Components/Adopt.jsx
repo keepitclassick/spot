@@ -8,17 +8,17 @@ import "./AdoptStyles.scss";
 const petsFromLocalStorage = JSON.parse(localStorage.getItem("Favourites"));
 
 const SearchPets = ({ pets = [], gender, sortType }) => {
-  const [petSize, setPetSize] = useState("large");
-  const [petFilter, setPetFilter] = useState("dog");
-  const [petGender, setPetGender] = useState(gender || "female");
+  const [petSize, setPetSize] = useState("");
+  const [petFilter, setPetFilter] = useState("");
+  const [petGender, setPetGender] = useState(gender || "");
   const [updatePets, setUpdatePets] = useState([]);
-  const [petLimit, setPetLimit] = useState("20");
+  const [petLimit, setPetLimit] = useState("");
   const [petLocation, setPetLocation] = useState("");
-  const [petDistance, setDistance] = useState("100");
-  const [sort, setSort] = useState(sortType || "distance");
-  const [goodWithKids, setGoodWithKids] = useState("true");
-  const [goodWithDogs, setGoodWithDogs] = useState("true");
-  const [goodWithCats, setGoodWithCats] = useState("false");
+  const [petDistance, setDistance] = useState("");
+  const [sort, setSort] = useState(sortType || "");
+  const [goodWithKids, setGoodWithKids] = useState(true);
+  const [goodWithDogs, setGoodWithDogs] = useState(true);
+  const [goodWithCats, setGoodWithCats] = useState(true);
   const [favourites, setFavourites] = useState(petsFromLocalStorage);
   const [loading, setLoading] = useState(false);
 
@@ -56,8 +56,8 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
         distance: petDistance,
         sort: sort,
         good_with_children: goodWithKids,
-        good_with_cats: goodWithDogs,
-        good_with_dogs: goodWithCats,
+        good_with_cats: goodWithCats,
+        good_with_dogs: goodWithDogs,
       })
       .then(setLoading(true))
       .then((data) => data.data)
@@ -160,7 +160,7 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
                     <input
                       class="form-control  form-control-sm"
                       type="text"
-                      placeholder="Postal Code"
+                      placeholder="Postal Code or City/Province"
                       value={petLocation}
                       onChange={onLocationChange}
                     />
@@ -252,8 +252,8 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
                   <label>
                     Cats?
                     <select
-                      value={goodWithDogs}
-                      onChange={onGoodWithDogsChange}
+                      value={goodWithCats}
+                      onChange={onGoodWithCatsChange}
                     >
                       <option value="true">Yes</option>
                       <option value="false">No</option>
@@ -262,8 +262,8 @@ const SearchPets = ({ pets = [], gender, sortType }) => {
                   <label>
                     Dogs?
                     <select
-                      value={goodWithCats}
-                      onChange={onGoodWithCatsChange}
+                      value={goodWithDogs}
+                      onChange={onGoodWithDogsChange}
                     >
                       <option value="true">Yes</option>
                       <option value="false">No</option>
