@@ -17,11 +17,6 @@ Spot is a React/Express app which allows users to search for adoptable pets base
 !["Nodemailer Email Form"](https://github.com/keepitclassick/spot/blob/master/client/public/images/contactform.gif?raw=true)
 
 
-## Setup
-
-Install dependencies with `npm install`.
-
-
 ## Dependencies
 ```sh
 - Axios
@@ -42,6 +37,10 @@ Clone project using `git@github.com:keepitclassick/spot.git` in your terminal.
 Both the frontend and the backend are included in this project. Install dependencies with `npm install` in both the client and server folders and then `npm start` to get both servers running. Use the .env.example to get the postgreSQL database running.
 
 The client will be running on http://localhost:3000
+
+
+
+
 
 
 
